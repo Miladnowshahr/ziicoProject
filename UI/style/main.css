@@ -1,0 +1,158 @@
+html{
+    direction: rtl;
+    height: 100%;
+    line-height: 0;
+    font-size: 10px;
+}
+body{
+    font-family: tahoma;
+    background-color: #f5f5f5;
+    height: 100%;
+}
+
+#wrapper{
+    position: relative;
+    direction: rtl;
+    text-align: right;
+    min-height: 100%;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+#content{
+    padding-bottom: 150px;
+}
+
+#footer{
+    background-color: #b7c544;
+    position: absolute;
+    height: 150px;
+    right: 0;
+    left: 0;
+    bottom: 0;
+}
+.clearfix::after{
+    content: '';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+.wide-wrap{
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+  
+}
+
+/*#region header*/
+#header{
+    background-color:white;
+   position: relative;
+}
+/*#region header-container*/
+.header-container{
+
+}
+.header-tbl{
+    display: inline-table;
+    width: 100%;
+    
+}
+.header-tbl-row{
+    display: table-row;
+}
+.header-tbl-cell{
+    display: table-cell;
+    vertical-align: middle;
+
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+.header-logo{
+    padding-left: 1em;
+
+}
+.header-logo-btn{
+opacity: 1;
+
+
+-webkit-transition: 300ms all;
+-moz-transition: 300ms all;
+-o-transition: 300ms all;
+-ms-transition:300ms all;
+transition: 300ms all;
+}
+.header-logo-btn:hover{
+    opacity: 0.7;
+}
+.header-logo-img{
+width: 150px;
+height: 80px;
+display: inline-block;
+}
+.header-action-btn{
+    display: inline-block;
+    font-size: 1.6em;
+    line-height: 1.6;
+    text-decoration: none;
+    padding: .5rem 1rem;
+}
+.header-search{
+    width: 100%;
+}
+.header-actions{
+    padding-left: 1em;
+    white-space: nowrap;
+}
+.header-action-items{
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 1em;
+    padding-left: 1em;
+    border-right: 1px solid #dddddd;
+}
+.header-action-items:first-child{
+    border-right: none;
+}
+/*#endregion header-container*/
+
+#nav{
+    display: block;
+    background-color: black;
+}
+.nav-bar{
+    list-style-type: none;
+   
+}
+
+.nav-item{
+display: inline-block;
+border-right: 1px solid #dddddd;
+}
+.nav-item:first-child{
+    border-right: none;
+}
+.nav-button{
+display: inline-block;
+color: #dddddd;
+font-size: 16px;
+line-height: 40px;
+padding:0 20px;
+text-decoration: none;
+font-weight: bold;
+
+-webkit-transition: 300ms all;
+-moz-transition: 300ms all;
+-o-transition: 300ms all;
+-ms-transition:300ms all;
+transition: 300ms all;
+
+}
+.nav-button:hover{
+    background-color: dimgray;
+    color: chocolate;
+}
+/*#endregion*/
