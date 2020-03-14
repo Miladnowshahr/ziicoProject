@@ -95,11 +95,62 @@ display: inline-block;
 }
 .header-action-btn{
     display: inline-block;
-    font-size: 1.6em;
-    line-height: 1.6;
     text-decoration: none;
     padding: .5rem 1rem;
+    color: #1f1f1f;
+
+    border-radius: 4px;
+    -webkit-border-radius:4px;
+    
+    -webkit-transition: 300ms all;
+    -moz-transition: 300ms all;
+    -o-transition: 300ms all;
+    -ms-transition:300ms all;
+    transition: 300ms all;
 }
+.header-action-btn:hover{
+    background-color: #f8f8f8;
+}
+.header-action-btn.cart{
+    color: orange;
+    border: 1px solid;
+  
+}
+.header-action-btn:before{
+    width: 24px;
+    height: 24px;
+    line-height: 24px !important;
+    text-align: center;
+    margin-left: 10px;
+    vertical-align: middle;
+}
+.header-action-btn-text{
+    display: inline-block;
+    line-height: 22px;
+    padding: 2px;
+    font-size: 1.6em;
+    vertical-align: middle;
+}
+
+.header-action-btn-count{
+display: inline-block;
+width: 18px;
+height: 18px;
+vertical-align: middle;
+background-color: orange;
+color: #fff;
+font-size: 0.8em;
+font-weight: bold;
+line-height: 18px;
+text-align: center;
+border-radius: 50%;
+margin-right: 10px;
+}
+.header-action-btn.profile::before{
+    float: left;
+    margin-left: 0;
+}
+
 .header-search{
     width: 100%;
 }
