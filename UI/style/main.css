@@ -7,10 +7,11 @@ html{
 }
 body{
     font-family: tahoma;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.856);
     height: 100%;
    
 }
+/*#region helper*/
 
 #wrapper{
     position: relative;
@@ -41,6 +42,118 @@ body{
     margin-right: auto;
   
 }
+
+.button{
+   
+    display: inline-block;
+    padding-left: 2em;
+    padding-right: 2rem;
+    text-decoration: none;
+    border-radius: 4px;
+    border:1px solid;
+    -webkit-transition: 300ms all;
+    -moz-transition: 300ms all;
+    -o-transition: 300ms all;
+    -ms-transition:300ms all;
+    transition: 300ms all;
+
+}
+.button:before{
+    line-height: 4rem;
+    font-size: 2em;
+    vertical-align: middle;
+    margin-left: 1rem;
+    text-align: center;
+    width: 4rem;
+    height: 4rem;
+}
+.button.icon{
+    padding-left: 0;
+    padding-right: 0;
+    line-height: 1.5;
+}
+
+.button.icon::before{
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+.button.pink{
+    background-color: #c13260;
+    border: 1px solid #c13260;
+    color: #fff;
+}
+a.button.pink:hover,label.button.pink:hover{
+    background-color: #c26f89;
+}
+
+
+.button.pink-outline{
+    border: 1px solid #c13260;
+    color:#c13260;
+}
+a.button.pink-outline:hover,label.button.pink-outline:hover{
+    color: #ddd;
+    background-color: #c13260;
+}
+
+.button.primary{
+    background-color: #d41818;
+    color: #fff;
+}
+.button.primary-outline{
+    color: #ff0000;
+    border: 1px solid #ff0000;
+}
+
+a.button.primary-outline:hover,label.button.button.primary-outline{
+    color: #fff;
+    border: 1px solid #ff0000;
+    background-color: #ff0000;
+}
+
+
+.button.second{
+    background-color: #4235f0;
+    color: #fff;
+    border-color: #4235f0;
+}
+
+.button.second-outline{
+    border-color: #4235f0;
+    color: #4235f0;
+}
+
+a.button.second-outline:hover,label.second-outline:hover{
+    color: #fff;
+    background-color: #4235f0;
+    border-color: #4235f0;
+}
+
+.button-text{
+    display: inline-block;
+    font-size: 1.4em;
+    line-height: 3.8rem;
+    padding-bottom: .2rem;
+    vertical-align: middle;
+}
+
+a.button.second:hover,label.button.second:hover{
+    cursor: pointer;
+    color: #fff;
+    border-color: #3b2fee;
+    background-color: #443da3b7;
+}
+
+a.button:hover,label.button:hover{
+    cursor: pointer;
+}
+a.button.link:hover,label.button.link:hover{
+    cursor: pointer;
+    color: #fff;
+    border-color: rgb(255, 86, 86);
+}
+/*#endregion*/
 
 /*#region header*/
 #header{
@@ -345,26 +458,72 @@ margin-right: 10px;
 }
 /*#endregion*/
 
+/*#region main*/
+#content{
+   padding-bottom: 500px;
+
+}
+#container{
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+/*#endregion main*/
+
+
+
+
 
 /*#region footer*/
 #footer{
-    background-color: #f0f1f1;
+    background-color: #c1c1c1;
     position: absolute;
     border-top: 1px solid #616161;
     right: 0;
     left: 0;
     bottom: 0;
 }
-.footer-copy-right-wrap{
-padding-top: 1rem;
-padding-bottom: 1rem;
-background-color: #ddd;
+.footer-badge-container{
+    border-bottom: 1px solid #998f8f;
+    background-color:rgba(209, 216, 221, 0.575);
 }
-.copy-right-text{
-    font-size: 1.6em;
-    color: #444;
+.footer-badge-wrap{
+    padding-top:1rem;
+    padding-bottom: 1rem;
     text-align: center;
+    list-style-type: none;
+    
 }
+
+
+
+.footer-badge-item{
+    display: inline-block;
+    width: 18%;
+
+}
+
+.footer-badge-icon{
+    display: inline-block;
+    line-height: 4rem;
+    font-size: 6rem;
+    color: #cf265b;
+
+}
+.footer-badge-title{
+    display: block;
+    margin-top: 1rem;
+    font-size: 1.5rem;
+    color: #222;
+    line-height: 1.6;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.footer-badge-link{
+    display: inline-block;
+    padding: 2rem;
+}
+
+
 
 .footer-detail-tbl{
     display: inline-table;
@@ -433,7 +592,7 @@ background-color: #ddd;
 .footer-detail-tbl-text-icon{
     float: right;
     margin-left:1rem ;
-    line-height: 1.5;
+    line-height: 1.5 ;
 }
 .footer-detail-tbl-text-icon::before{
     line-height: 1.2;
@@ -450,5 +609,23 @@ background-color: #ddd;
     direction: ltr;
 }
 
+.footer-detail-tbl-action {
+    margin-top: 2rem;
+    margin-right: 2rem;
+}
+.footer-detail-tbl-action .button{
+    margin: 0.5rem;
+}
 
+
+.footer-copy-right-wrap{
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background-color: #999999;
+}
+.copy-right-text{
+    font-size: 1.4em;
+    color: #444;
+    text-align: center;
+}
 /*#endregion*/
