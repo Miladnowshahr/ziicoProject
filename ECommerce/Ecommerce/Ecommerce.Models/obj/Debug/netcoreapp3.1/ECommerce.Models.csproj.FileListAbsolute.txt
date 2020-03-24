@@ -1,0 +1,5 @@
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Models\bin\Debug\netcoreapp3.1\ECommerce.Models.deps.json
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Models\bin\Debug\netcoreapp3.1\ECommerce.Models.dll
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Models\obj\Debug\netcoreapp3.1\ECommerce.Models.csprojAssemblyReference.cache
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Models\obj\Debug\netcoreapp3.1\ECommerce.Models.AssemblyInfoInputs.cache
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Models\obj\Debug\netcoreapp3.1\ECommerce.Models.AssemblyInfo.cs

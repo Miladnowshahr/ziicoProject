@@ -1,0 +1,5 @@
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.DataAccess\bin\Debug\netcoreapp3.1\ECommerce.DataAccess.deps.json
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.DataAccess\bin\Debug\netcoreapp3.1\ECommerce.DataAccess.dll
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.DataAccess\obj\Debug\netcoreapp3.1\ECommerce.DataAccess.csprojAssemblyReference.cache
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.DataAccess\obj\Debug\netcoreapp3.1\ECommerce.DataAccess.AssemblyInfoInputs.cache
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.DataAccess\obj\Debug\netcoreapp3.1\ECommerce.DataAccess.AssemblyInfo.cs
