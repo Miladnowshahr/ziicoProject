@@ -3,3 +3,10 @@ E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Models\bin\Debug\n
 E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Models\obj\Debug\netcoreapp3.1\ECommerce.Models.csprojAssemblyReference.cache
 E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Models\obj\Debug\netcoreapp3.1\ECommerce.Models.AssemblyInfoInputs.cache
 E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Models\obj\Debug\netcoreapp3.1\ECommerce.Models.AssemblyInfo.cs
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Models\bin\Debug\netcoreapp3.1\ECommerce.Models.runtimeconfig.json
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Models\bin\Debug\netcoreapp3.1\ECommerce.Models.runtimeconfig.dev.json
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Models\bin\Debug\netcoreapp3.1\ECommerce.Models.pdb
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Models\obj\Debug\netcoreapp3.1\ECommerce.Models.csproj.CoreCompileInputs.cache
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Models\obj\Debug\netcoreapp3.1\ECommerce.Models.dll
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Models\obj\Debug\netcoreapp3.1\ECommerce.Models.pdb
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Models\obj\Debug\netcoreapp3.1\ECommerce.Models.genruntimeconfig.cache

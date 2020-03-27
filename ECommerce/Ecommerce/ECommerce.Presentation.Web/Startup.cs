@@ -31,15 +31,36 @@ namespace ECommerce.Presentation.Web
 
             app.UseStatusCodePages();
             app.UseStaticFiles();
-            app.UseMvcWithDefaultRoute();
+            //app.UseMvc(route =>
+            //{
+            //    route.MapRoute(
+            //        "admin",
+            //        "{area=admin}/{controller=Home}/{action=Index}/{id?}"
+            //    );
+
+            //    route.MapRoute(
+            //        "default",
+            //        template: "{controller=Home}/{action=Index}/{id?}");
+            //});
 
 
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                endpoints.MapControllerRoute(
+                    name: "admin",
+                    pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
+
+
+                endpoints.MapControllerRoute(
+                    "default",
+                    "{controller=Home}/{action=Index}/{id?}");
+
+                //endpoints.MapAreaControllerRoute(
+                //    "admin",
+                //    "admin",
+                //    "{area}/{controller=Home}/{action=Index}/{id?}"
+                //);
+               
             });
         }
     }

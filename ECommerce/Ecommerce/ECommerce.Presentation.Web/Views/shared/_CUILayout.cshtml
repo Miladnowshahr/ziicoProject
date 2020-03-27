@@ -6,10 +6,17 @@
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@ViewBag.Title</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    @RenderSection("Styles", false)
 </head>
 <body>
+    <div>CUI Layout</div>
     <div>
         @RenderBody()
     </div>
+
+    <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
+    @RenderSection("Scripts", false)
 </body>
 </html>
