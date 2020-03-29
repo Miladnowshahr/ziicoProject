@@ -1,0 +1,14 @@
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.IoC\bin\Debug\netcoreapp3.1\ECommerce.Infra.IoC.deps.json
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.IoC\bin\Debug\netcoreapp3.1\ECommerce.Infra.IoC.dll
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.IoC\bin\Debug\netcoreapp3.1\ECommerce.Infra.IoC.pdb
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.IoC\bin\Debug\netcoreapp3.1\ECommerce.DataAccess.dll
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.IoC\bin\Debug\netcoreapp3.1\ECommerce.Models.dll
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.IoC\bin\Debug\netcoreapp3.1\ECommerce.DataAccess.pdb
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.IoC\bin\Debug\netcoreapp3.1\ECommerce.Models.pdb
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.IoC\obj\Debug\netcoreapp3.1\ECommerce.Infra.IoC.csprojAssemblyReference.cache
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.IoC\obj\Debug\netcoreapp3.1\ECommerce.Infra.IoC.csproj.CoreCompileInputs.cache
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.IoC\obj\Debug\netcoreapp3.1\ECommerce.Infra.IoC.AssemblyInfoInputs.cache
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.IoC\obj\Debug\netcoreapp3.1\ECommerce.Infra.IoC.AssemblyInfo.cs
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.IoC\obj\Debug\netcoreapp3.1\ECommerce.Infra.IoC.csproj.CopyComplete
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.IoC\obj\Debug\netcoreapp3.1\ECommerce.Infra.IoC.dll
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.IoC\obj\Debug\netcoreapp3.1\ECommerce.Infra.IoC.pdb
