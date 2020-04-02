@@ -1,0 +1,9 @@
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Infra.Web\bin\Debug\netcoreapp3.1\ECommerce.Infra.Web.deps.json
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Infra.Web\bin\Debug\netcoreapp3.1\ECommerce.Infra.Web.dll
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Infra.Web\bin\Debug\netcoreapp3.1\ECommerce.Infra.Web.pdb
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Infra.Web\obj\Debug\netcoreapp3.1\ECommerce.Infra.Web.csprojAssemblyReference.cache
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Infra.Web\obj\Debug\netcoreapp3.1\ECommerce.Infra.Web.csproj.CoreCompileInputs.cache
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Infra.Web\obj\Debug\netcoreapp3.1\ECommerce.Infra.Web.AssemblyInfoInputs.cache
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Infra.Web\obj\Debug\netcoreapp3.1\ECommerce.Infra.Web.AssemblyInfo.cs
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Infra.Web\obj\Debug\netcoreapp3.1\ECommerce.Infra.Web.dll
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Infra.Web\obj\Debug\netcoreapp3.1\ECommerce.Infra.Web.pdb

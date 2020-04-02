@@ -1,4 +1,5 @@
 ﻿using ECommerce.Models.Model.Products.Brands;
+using ECommerce.Models.Model.Products.States;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,11 +11,10 @@ namespace ECommerce.Models.Services.Repository.EF.BrandRepo
     public interface IBrandRepository
     {
         Task AddAsync(Brand brand);
-        Task UpdateAsync(Brand brand);
+        void Update(Brand brand);
         Task DeleteAsync(Brand brand);
-        Task<IEnumerable<Brand>> GetBrandsAsync();
-        Task<Brand> FindAsync(int id);
-
+        Task<IEnumerable<Brand>> GetBrandsAsync(string title,int? id,State? state);
+        Task<Brand> GetBrandAsync(int id);
         Task SaveAsync();
     }
 }

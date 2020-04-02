@@ -9,7 +9,8 @@
       "ECommerce.Infra.IoC/1.0.0": {
         "dependencies": {
           "ECommerce.DataAccess": "1.0.0",
-          "ECommerce.Models": "1.0.0"
+          "ECommerce.Models": "1.0.0",
+          "ECommerce.Models.Services": "1.0.0"
         },
         "runtime": {
           "ECommerce.Infra.IoC.dll": {}
@@ -1530,6 +1531,15 @@
         "runtime": {
           "ECommerce.Models.dll": {}
         }
+      },
+      "ECommerce.Models.Services/1.0.0": {
+        "dependencies": {
+          "ECommerce.DataAccess": "1.0.0",
+          "ECommerce.Models": "1.0.0"
+        },
+        "runtime": {
+          "ECommerce.Models.Services.dll": {}
+        }
       }
     }
   },
@@ -2623,6 +2633,11 @@
       "sha512": ""
     },
     "ECommerce.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ECommerce.Models.Services/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

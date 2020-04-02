@@ -19,7 +19,7 @@ namespace ECommerce.DataAccess.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("ECommerce.Models.Products.Brands.Brand", b =>
+            modelBuilder.Entity("ECommerce.Models.Model.Products.Brands.Brand", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -35,11 +35,14 @@ namespace ECommerce.DataAccess.Migrations
                     b.Property<string>("LastModifierId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<DateTime>("LastModifyDate")
+                    b.Property<DateTime?>("LastModifyDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Slug")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte>("State")
+                        .HasColumnType("tinyint");
 
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
@@ -53,7 +56,7 @@ namespace ECommerce.DataAccess.Migrations
                     b.ToTable("Brands");
                 });
 
-            modelBuilder.Entity("ECommerce.Models.Products.Groups.Group", b =>
+            modelBuilder.Entity("ECommerce.Models.Model.Products.Groups.Group", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -69,11 +72,14 @@ namespace ECommerce.DataAccess.Migrations
                     b.Property<string>("LastModifierId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<DateTime>("LastModifyDate")
+                    b.Property<DateTime?>("LastModifyDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Slug")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<byte>("State")
+                        .HasColumnType("tinyint");
 
                     b.Property<string>("Title")
                         .HasColumnType("nvarchar(max)");
@@ -87,7 +93,7 @@ namespace ECommerce.DataAccess.Migrations
                     b.ToTable("Groups");
                 });
 
-            modelBuilder.Entity("ECommerce.Models.Products.Product", b =>
+            modelBuilder.Entity("ECommerce.Models.Model.Products.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -112,7 +118,7 @@ namespace ECommerce.DataAccess.Migrations
                     b.Property<string>("LastModifierId")
                         .HasColumnType("nvarchar(450)");
 
-                    b.Property<DateTime>("LastModifyDate")
+                    b.Property<DateTime?>("LastModifyDate")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("PrimaryTitle")
@@ -137,7 +143,7 @@ namespace ECommerce.DataAccess.Migrations
                     b.ToTable("Products");
                 });
 
-            modelBuilder.Entity("ECommerce.Models.Users.Operator", b =>
+            modelBuilder.Entity("ECommerce.Models.Model.Users.Operator", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -155,6 +161,12 @@ namespace ECommerce.DataAccess.Migrations
 
                     b.Property<bool>("EmailConfirmed")
                         .HasColumnType("bit");
+
+                    b.Property<string>("FirstName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("LastName")
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("LockoutEnabled")
                         .HasColumnType("bit");
@@ -333,43 +345,43 @@ namespace ECommerce.DataAccess.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("ECommerce.Models.Products.Brands.Brand", b =>
+            modelBuilder.Entity("ECommerce.Models.Model.Products.Brands.Brand", b =>
                 {
-                    b.HasOne("ECommerce.Models.Users.Operator", "Creator")
+                    b.HasOne("ECommerce.Models.Model.Users.Operator", "Creator")
                         .WithMany()
                         .HasForeignKey("CreatorId");
 
-                    b.HasOne("ECommerce.Models.Users.Operator", "LastModifier")
+                    b.HasOne("ECommerce.Models.Model.Users.Operator", "LastModifier")
                         .WithMany()
                         .HasForeignKey("LastModifierId");
                 });
 
-            modelBuilder.Entity("ECommerce.Models.Products.Groups.Group", b =>
+            modelBuilder.Entity("ECommerce.Models.Model.Products.Groups.Group", b =>
                 {
-                    b.HasOne("ECommerce.Models.Users.Operator", "Creator")
+                    b.HasOne("ECommerce.Models.Model.Users.Operator", "Creator")
                         .WithMany()
                         .HasForeignKey("CreatorId");
 
-                    b.HasOne("ECommerce.Models.Users.Operator", "LastModifier")
+                    b.HasOne("ECommerce.Models.Model.Users.Operator", "LastModifier")
                         .WithMany()
                         .HasForeignKey("LastModifierId");
                 });
 
-            modelBuilder.Entity("ECommerce.Models.Products.Product", b =>
+            modelBuilder.Entity("ECommerce.Models.Model.Products.Product", b =>
                 {
-                    b.HasOne("ECommerce.Models.Products.Brands.Brand", "Brand")
+                    b.HasOne("ECommerce.Models.Model.Products.Brands.Brand", "Brand")
                         .WithMany()
                         .HasForeignKey("BrandId");
 
-                    b.HasOne("ECommerce.Models.Users.Operator", "Creator")
+                    b.HasOne("ECommerce.Models.Model.Users.Operator", "Creator")
                         .WithMany()
                         .HasForeignKey("CreatorId");
 
-                    b.HasOne("ECommerce.Models.Products.Groups.Group", "Group")
+                    b.HasOne("ECommerce.Models.Model.Products.Groups.Group", "Group")
                         .WithMany()
                         .HasForeignKey("GroupId");
 
-                    b.HasOne("ECommerce.Models.Users.Operator", "LastModifier")
+                    b.HasOne("ECommerce.Models.Model.Users.Operator", "LastModifier")
                         .WithMany()
                         .HasForeignKey("LastModifierId");
                 });
@@ -385,7 +397,7 @@ namespace ECommerce.DataAccess.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("ECommerce.Models.Users.Operator", null)
+                    b.HasOne("ECommerce.Models.Model.Users.Operator", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -394,7 +406,7 @@ namespace ECommerce.DataAccess.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("ECommerce.Models.Users.Operator", null)
+                    b.HasOne("ECommerce.Models.Model.Users.Operator", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -409,7 +421,7 @@ namespace ECommerce.DataAccess.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("ECommerce.Models.Users.Operator", null)
+                    b.HasOne("ECommerce.Models.Model.Users.Operator", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -418,7 +430,7 @@ namespace ECommerce.DataAccess.Migrations
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("ECommerce.Models.Users.Operator", null)
+                    b.HasOne("ECommerce.Models.Model.Users.Operator", null)
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)

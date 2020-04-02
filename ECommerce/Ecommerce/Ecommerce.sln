@@ -27,7 +27,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECommerce.Models", "ECommer
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECommerce.Models.Services", "ECommerce.Models.Services\ECommerce.Models.Services.csproj", "{605735F4-3613-4C62-9AA4-A4617C357CF0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerce.Infra.IoC", "ECommerce.IoC\ECommerce.Infra.IoC.csproj", "{2A17C397-E2CB-4B03-BFB3-60B933EEC8AB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ECommerce.Infra.IoC", "ECommerce.IoC\ECommerce.Infra.IoC.csproj", "{2A17C397-E2CB-4B03-BFB3-60B933EEC8AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ECommerce.Infra.Web", "ECommerce.Infra.Web\ECommerce.Infra.Web.csproj", "{A486A4A1-2CA0-46CC-9D14-7A74E5E0D633}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -55,6 +57,10 @@ Global
 		{2A17C397-E2CB-4B03-BFB3-60B933EEC8AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2A17C397-E2CB-4B03-BFB3-60B933EEC8AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2A17C397-E2CB-4B03-BFB3-60B933EEC8AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A486A4A1-2CA0-46CC-9D14-7A74E5E0D633}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A486A4A1-2CA0-46CC-9D14-7A74E5E0D633}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A486A4A1-2CA0-46CC-9D14-7A74E5E0D633}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A486A4A1-2CA0-46CC-9D14-7A74E5E0D633}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,6 +74,7 @@ Global
 		{51BC288F-94A1-464E-BAD5-78C6ACFD2F2E} = {FBB04914-F9CB-4E89-BB7F-CD181116B16D}
 		{605735F4-3613-4C62-9AA4-A4617C357CF0} = {066E9B1F-8A05-4673-A804-8F6B757DC4E9}
 		{2A17C397-E2CB-4B03-BFB3-60B933EEC8AB} = {02B8F667-F938-4DD1-ADD9-DD2C9D517059}
+		{A486A4A1-2CA0-46CC-9D14-7A74E5E0D633} = {02B8F667-F938-4DD1-ADD9-DD2C9D517059}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {B76F3996-9D4B-41A8-A807-676E8C716C88}

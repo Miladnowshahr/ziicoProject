@@ -2978,7 +2978,8 @@
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
           "ECommerce.DataAccess": "1.0.0",
-          "ECommerce.Models": "1.0.0"
+          "ECommerce.Models": "1.0.0",
+          "ECommerce.Models.Services": "1.0.0"
         },
         "compile": {
           "bin/placeholder/ECommerce.Infra.IoC.dll": {}
@@ -3007,6 +3008,23 @@
         },
         "runtime": {
           "bin/placeholder/ECommerce.Models.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.AspNetCore.App"
+        ]
+      },
+      "ECommerce.Models.Services/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "ECommerce.DataAccess": "1.0.0",
+          "ECommerce.Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/ECommerce.Models.Services.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ECommerce.Models.Services.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
@@ -9474,6 +9492,11 @@
       "type": "project",
       "path": "../ECommerce.Models/ECommerce.Models.csproj",
       "msbuildProject": "../ECommerce.Models/ECommerce.Models.csproj"
+    },
+    "ECommerce.Models.Services/1.0.0": {
+      "type": "project",
+      "path": "../ECommerce.Models.Services/ECommerce.Models.Services.csproj",
+      "msbuildProject": "../ECommerce.Models.Services/ECommerce.Models.Services.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -9562,7 +9585,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
       }
     }
   }

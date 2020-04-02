@@ -70,7 +70,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -82,6 +82,76 @@
         "projectPath": "E:\\Project\\ASPCore\\ziicoProject\\ECommerce\\Ecommerce\\ECommerce.IoC\\ECommerce.Infra.IoC.csproj",
         "packagesPath": "C:\\Users\\Milad\\.nuget\\packages\\",
         "outputPath": "E:\\Project\\ASPCore\\ziicoProject\\ECommerce\\Ecommerce\\ECommerce.IoC\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Microsoft\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Milad\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "E:\\Project\\ASPCore\\ziicoProject\\ECommerce\\Ecommerce\\ECommerce.DataAccess\\ECommerce.DataAccess.csproj": {
+                "projectPath": "E:\\Project\\ASPCore\\ziicoProject\\ECommerce\\Ecommerce\\ECommerce.DataAccess\\ECommerce.DataAccess.csproj"
+              },
+              "E:\\Project\\ASPCore\\ziicoProject\\ECommerce\\Ecommerce\\ECommerce.Models.Services\\ECommerce.Models.Services.csproj": {
+                "projectPath": "E:\\Project\\ASPCore\\ziicoProject\\ECommerce\\Ecommerce\\ECommerce.Models.Services\\ECommerce.Models.Services.csproj"
+              },
+              "E:\\Project\\ASPCore\\ziicoProject\\ECommerce\\Ecommerce\\ECommerce.Models\\ECommerce.Models.csproj": {
+                "projectPath": "E:\\Project\\ASPCore\\ziicoProject\\ECommerce\\Ecommerce\\ECommerce.Models\\ECommerce.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.AspNetCore.App": {
+              "privateAssets": "none"
+            },
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "E:\\Project\\ASPCore\\ziicoProject\\ECommerce\\Ecommerce\\ECommerce.Models.Services\\ECommerce.Models.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\Project\\ASPCore\\ziicoProject\\ECommerce\\Ecommerce\\ECommerce.Models.Services\\ECommerce.Models.Services.csproj",
+        "projectName": "ECommerce.Models.Services",
+        "projectPath": "E:\\Project\\ASPCore\\ziicoProject\\ECommerce\\Ecommerce\\ECommerce.Models.Services\\ECommerce.Models.Services.csproj",
+        "packagesPath": "C:\\Users\\Milad\\.nuget\\packages\\",
+        "outputPath": "E:\\Project\\ASPCore\\ziicoProject\\ECommerce\\Ecommerce\\ECommerce.Models.Services\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Microsoft\\Xamarin\\NuGet\\",
@@ -137,7 +207,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -227,7 +297,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     },
@@ -304,7 +374,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.200\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.201\\RuntimeIdentifierGraph.json"
         }
       }
     }

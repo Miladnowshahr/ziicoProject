@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 using ECommerce.Models.Model.Products;
 using ECommerce.Models.Model.Users;
 using Microsoft.EntityFrameworkCore;
-using ECommerce.Models.Model.Products;
 using ECommerce.Models.Model.Products.Brands;
 using ECommerce.Models.Model.Products.Groups;
 using Microsoft.Extensions.Configuration;
@@ -18,6 +17,9 @@ namespace ECommerce.DataAccess.Context
 {
     public class AppDbContext : IdentityDbContext<Operator>
     {
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+        {
+        }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Data Source=DESKTOP-RNVP9U0;database=DigiShopDB;Integrated Security=True;MultipleActiveResultSets=True");

@@ -1,5 +1,8 @@
 ﻿using ECommerce.DataAccess.Context;
 using ECommerce.Models.Model.Users;
+using ECommerce.Models.Services.Repository.EF.BrandRepo;
+using ECommerce.Models.Services.Repository.EF.GroupRepo;
+using ECommerce.Models.Services.Repository.EF.ProductRepo;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -29,6 +32,10 @@ namespace ECommerce.Infra.IoC
                 options.Password.RequiredUniqueChars = 0;
             });
 
+
+            services.AddScoped<IProductRepository, ProductRepository>();
+            services.AddScoped<IBrandRepository, BrandRepository>();
+            services.AddScoped<IGroupRepository, GroupRepository>();
             
         }
     }

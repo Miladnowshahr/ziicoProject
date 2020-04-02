@@ -1,5 +1,4 @@
-﻿using ECommerce.Models.Users;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,6 +15,6 @@ namespace ECommerce.Models.Model.ShareModel
 
         public Operator LastModifier { get; set; }
 
-        public DateTime LastModifyDate { get; set; }
+        public DateTime? LastModifyDate { get; set; }
     }
 }

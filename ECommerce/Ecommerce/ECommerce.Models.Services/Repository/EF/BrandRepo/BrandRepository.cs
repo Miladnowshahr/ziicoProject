@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using ECommerce.DataAccess.Context;
 using ECommerce.Models.Model.Products.Brands;
+using ECommerce.Models.Model.Products.States;
+using Microsoft.EntityFrameworkCore;
 
 namespace ECommerce.Models.Services.Repository.EF.BrandRepo
 {
@@ -17,29 +19,40 @@ namespace ECommerce.Models.Services.Repository.EF.BrandRepo
             _db = db;
         }
 
-        public Task AddAsync(Brand brand)
+        public async Task AddAsync(Brand brand)
         {
-            throw new NotImplementedException();
+            await _db.Brands.AddAsync(brand);
         }
 
-        public Task UpdateAsync(Brand brand)
+        public void Update(Brand brand)
         {
-            throw new NotImplementedException();
+             _db.Brands.Update(brand);
         }
 
-        public Task DeleteAsync(Brand brand)
+        public async Task DeleteAsync(Brand brand)
         {
-            throw new NotImplementedException();
+            var model = await GetBrandAsync(brand.Id);
+            _db.Brands.Remove(model);
         }
 
-        public Task<IEnumerable<Brand>> GetBrandsAsync()
+        public async Task<IEnumerable<Brand>> GetBrandsAsync(string title, int? id, State? state)
         {
-            throw new NotImplementedException();
+            var model= await _db.Brands.Include(o=>o.Creator).Include(i=>i.LastModifier)
+                .Where(b=>(b.Title.Contains(title)||string.IsNullOrEmpty(title))&& (b.Id==id || id.HasValue) && (b.State==state||state.HasValue))
+                .ToListAsync();
+
+            //old version
+
+            //model= string.IsNullOrEmpty(title)? model.Where(t => t.Title.Contains(title)).ToList() : model;
+            //model = id != null ? model.Where(i => i.Id == id).ToList() : model;
+            //model = state != null ? model.Where(s => s.State == state).ToList() : model;
+
+            return model;
         }
 
-        public Task<Brand> FindAsync(int id)
+        public async Task<Brand> GetBrandAsync(int id)
         {
-            throw new NotImplementedException();
+            return await _db.Brands.FindAsync(id);
         }
 
         public async Task SaveAsync()

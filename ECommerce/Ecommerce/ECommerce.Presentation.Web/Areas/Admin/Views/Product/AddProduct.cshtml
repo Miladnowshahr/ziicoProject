@@ -23,9 +23,9 @@
     <div class="card-body">
         <form class="was-validated" asp-action="AddProduct" asp-area="Admin" asp-controller="Product" method="post" name="frmProduct">
             @{
-                if (Id!=null)
+                if (Id != null)
                 {
-                    <input type="hidden" name="id" value="@Id"/>
+                    <input type="hidden" name="id" value="@Id" />
                 }
             }
             <div class="form-group row">
@@ -38,7 +38,7 @@
             <div class="form-group row">
                 <label for="txtSecName" class="col-md-2">نام محصول به زبان انکلیسی</label>
                 <div class="col-md-5">
-                    <input class="form-control" id="txtSecName"  required name="secName" />
+                    <input class="form-control" id="txtSecName" required name="secName" />
                     <div class="valid-feedback">درج نام انگلیسی الزامی است.</div>
                 </div>
 
@@ -88,8 +88,14 @@
 
                 </div>
             </div>
+            .
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-5">
+                    <button type="submit" class="btn btn-primary">ذخیره</button>
 
-            <button type="submit" class="btn btn-primary">ذخیره</button>
+                </div>
+            </div>
         </form>
     </div>
 </div>
