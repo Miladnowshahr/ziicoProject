@@ -1,4 +1,5 @@
 ﻿using ECommerce.Models.Model.Products.Groups;
+using ECommerce.Models.Model.Products.States;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,11 +14,11 @@ namespace ECommerce.Models.Services.Repository.EF.GroupRepo
 
         Task<Group> GetGroupAsync(int id);
 
-        void Update(Group group);
+        Task Update(Group group);
 
-        Task<IEnumerable<Group>> GetGroupsAsync();
+        Task<IEnumerable<Group>> GetGroupsAsync(int? id, string title, string slug, State? state);
 
-        Task DeleteAsync(Group group);
+        Task DeleteAsync(int id);
 
         Task SaveAsync();
 

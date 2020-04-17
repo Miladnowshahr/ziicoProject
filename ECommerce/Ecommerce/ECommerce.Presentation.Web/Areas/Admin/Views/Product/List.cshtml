@@ -1,5 +1,10 @@
-﻿@{
+﻿@model List<ECommerce.Models.ViewModels.ProductVM.ProductViewModel>
+
+@using ECommerce.Models.Model.KeyPoints
+
+@{
     ViewData["Title"] = "لیست کالاها";
+    int counter = 0;
 }
 
 @section Breadcrumb
@@ -115,133 +120,54 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>
-                        <strong><a href="#">گلکسی اس 10</a></strong><br />
-                        <span>Galaxy S10</span><br />
-                        <span class="text-muted">شناسه :1 </span>
-                    </td>
-                    <td class="align-middle">سامسونگ</td>
-                    <td class="align-middle">گوشی</td>
-                    <td class="align-middle">فعال</td>
-                    <td class="align-middle">
-                        <span>میلاد نعمت پور</span><br />
-                        <span class="text-muted">تاریخ :1399/01/07 , 16:05</span>
-                    </td>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th scope="row">@(counter += 1)</th>
+                        <td>
+                            <strong><a href="#">@item.PrimaryTitle</a></strong><br />
+                            <span>@item.SecondaryTile</span><br />
+                            <span class="text-muted">شناسه :@item.Id </span>
+                        </td>
+                        <td class="align-middle">@item.Brand.Title</td>
+                        <td class="align-middle">@item.Group.Title</td>
+                        <td class="align-middle">@item.State</td>
+                        <td class="align-middle">
+                            <span>@item.Creator</span><br />
+                            <span class="text-muted">تاریخ :@item.CreateDate</span>
+                        </td>
 
-                    <td class="align-middle">
-                        <span>میلاد نعمت پور</span><br />
-                        <span class="text-muted">تاریخ :1399/01/07 , 16:05</span>
-                    </td>
+                        <td class="align-middle">
+                            @if (string.IsNullOrWhiteSpace(item.LastModifier))
+                            {
+                                <span>--</span><br />
 
-                    <td class="align-middle">
-                        <div class="dropdown">
-                            <button class="btn dropdown-toggle" type="button" id="ddAction" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                            <div class="dropdown-menu  dropdown-menu-right text-right" aria-labelledby="ddAction">
-                                <a class="dropdown-item" href="#">جزئیات</a>
-                                <a class="dropdown-item" href="#">ویرایش</a>
-                                <a class="dropdown-item" href="#">مدیریت تصاویر</a>
-                                <a class="dropdown-item text-danger" href="#">حذف</a>
+                            }
+                            else
+                            {
+
+                                <span>@item.LastModifier</span><br />
+                                <span class="text-muted">تاریخ :@item.LastModifyDate</span>
+                            }
+                        </td>
+
+                        <td class="align-middle">
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle" type="button" id="ddAction" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                <div class="dropdown-menu  dropdown-menu-right text-right" aria-labelledby="ddAction">
+                                    <a class="dropdown-item" asp-area="admin" asp-controller="product" asp-action="Index" asp-route-id="@item.Id">جزئیات</a>
+                                    <a class="dropdown-item" asp-area="admin" asp-controller="product" asp-action="Edit" asp-route-id="@item.Id" >ویرایش</a>
+                                    <a class="dropdown-item" asp-area="admin" asp-controller="keypoint" asp-action="list" asp-route-productId="" asp-route-type="@KeyPointType.Positive">مدیریت نقاط مثبت</a>
+                                    <a class="dropdown-item" asp-area="admin" asp-controller="keypoint" asp-action="list" asp-route-productId="" asp-route-type="@KeyPointType.Negative">مدیریت نقاط منفی</a>
+                                    <a class="dropdown-item" asp-area="admin" asp-controller="product" asp-action="Specification" asp-route-productId="@item.Id">مدیریت مشخصات فنی</a>
+                                    <a class="dropdown-item text-danger" href="#">حذف</a>
+                                </div>
                             </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>
-                        <strong><a href="#">گلکسی اس 8</a></strong><br />
-                        <span>Galaxy S8</span><br />
-                        <span class="text-muted">شناسه :2 </span>
-                    </td>
-                    <td class="align-middle">سامسونگ</td>
-                    <td class="align-middle">گوشی</td>
-                    <td class="align-middle">فعال</td>
-                    <td class="align-middle">
-                        <span>میلاد نعمت پور</span><br />
-                        <span class="text-muted">تاریخ :1399/01/07 , 16:05</span>
-                    </td>
+                        </td>
+                    </tr>
+                }
 
-                    <td class="align-middle">
-                        <span>میلاد نعمت پور</span><br />
-                        <span class="text-muted">تاریخ :1399/01/07 , 16:05</span>
-                    </td>
 
-                    <td class="align-middle">
-                        <div class="dropdown">
-                            <button class="btn dropdown-toggle" type="button" id="ddAction" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                            <div class="dropdown-menu  dropdown-menu-right text-right" aria-labelledby="ddAction">
-                                <a class="dropdown-item" href="#">جزئیات</a>
-                                <a class="dropdown-item" href="#">ویرایش</a>
-                                <a class="dropdown-item" href="#">مدیریت تصاویر</a>
-                                <a class="dropdown-item text-danger" href="#">حذف</a>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>
-                        <strong><a href="#">گلکسی اس 9</a></strong><br />
-                        <span>Galaxy S9</span><br />
-                        <span class="text-muted">شناسه :3 </span>
-                    </td>
-                    <td class="align-middle">سامسونگ</td>
-                    <td class="align-middle">گوشی</td>
-                    <td class="align-middle">فعال</td>
-                    <td class="align-middle">
-                        <span>میلاد نعمت پور</span><br />
-                        <span class="text-muted">تاریخ :1399/01/07 , 16:05</span>
-                    </td>
-
-                    <td class="align-middle">
-                        <span>میلاد نعمت پور</span><br />
-                        <span class="text-muted">تاریخ :1399/01/07 , 16:05</span>
-                    </td>
-
-                    <td class="align-middle">
-                        <div class="dropdown">
-                            <button class="btn dropdown-toggle" type="button" id="ddAction" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                            <div class="dropdown-menu  dropdown-menu-right text-right" aria-labelledby="ddAction">
-                                <a class="dropdown-item" href="#">جزئیات</a>
-                                <a class="dropdown-item" href="#">ویرایش</a>
-                                <a class="dropdown-item" href="#">مدیریت تصاویر</a>
-                                <a class="dropdown-item text-danger" href="#">حذف</a>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>
-                        <strong><a href="#"> آیفون 10 پرو مکس</a></strong><br />
-                        <span>Iphone 10 Pro Max</span><br />
-                        <span class="text-muted">شناسه :4 </span>
-                    </td>
-                    <td class="align-middle">اپل</td>
-                    <td class="align-middle">گوشی</td>
-                    <td class="align-middle">فعال</td>
-                    <td class="align-middle">
-                        <span>میلاد نعمت پور</span><br />
-                        <span class="text-muted">تاریخ :1399/01/07 , 16:08</span>
-                    </td>
-
-                    <td class="align-middle">
-                        <span>--</span>
-                    </td>
-
-                    <td class="align-middle">
-                        <div class="dropdown">
-                            <button class="btn dropdown-toggle" type="button" id="ddAction" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                            <div class="dropdown-menu dropdown-menu-right text-right" aria-labelledby="ddAction">
-                                <a class="dropdown-item" href="#">جزئیات</a>
-                                <a class="dropdown-item" href="#">ویرایش</a>
-                                <a class="dropdown-item" href="#">مدیریت تصاویر</a>
-                                <a class="dropdown-item text-danger" href="#">حذف</a>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
             </tbody>
 
         </table>

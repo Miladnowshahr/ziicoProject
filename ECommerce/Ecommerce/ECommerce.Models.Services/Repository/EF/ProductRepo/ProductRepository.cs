@@ -11,7 +11,7 @@ namespace ECommerce.Models.Services.Repository.EF.ProductRepo
 {
     public class ProductRepository : IProductRepository
     {
-        private readonly AppDbContext _db;
+        private AppDbContext _db;
 
         public ProductRepository(AppDbContext db)
         {
@@ -34,9 +34,15 @@ namespace ECommerce.Models.Services.Repository.EF.ProductRepo
             return await _db.Products.FindAsync(id);
         }
 
-        public async Task<IEnumerable<Product>> GetProductsAsync()
+        public async Task<IEnumerable<Product>> GetProductsAsync(int? id,string primTitle,string secTitle)
         {
-            return await _db.Products.Include(b=>b.Brand).ThenInclude(o=>o.Creator).Include(g=>g.Group).ThenInclude(o=>o.Creator).ToListAsync();
+            var query= await _db.Products.Include(b=>b.Brand).Include(o=>o.Creator).Include(g=>g.Group).Include(o=>o.LastModifier).ToListAsync();
+
+            var product = query.Where(p => (p.Id == id || id == null) && (p.PrimaryTitle == primTitle || string.IsNullOrEmpty(primTitle)) && (p.SecondaryTile==secTitle || string.IsNullOrEmpty(secTitle))).ToList();
+
+
+            return product;
+        
         }
 
         public void Update(Product product)

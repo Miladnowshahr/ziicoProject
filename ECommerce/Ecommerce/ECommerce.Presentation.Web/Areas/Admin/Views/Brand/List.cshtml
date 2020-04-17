@@ -1,4 +1,4 @@
-﻿
+﻿@model List<BrandViewModel>
 @{
     ViewData["Title"] = "List";
 }
@@ -19,7 +19,7 @@
                     data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                 فیلتر
             </button>
-            <a type="button" class="btn btn-outline-success btn-sm" asp-area="Admin" asp-controller="Product" asp-action="AddProduct">افزودن</a>
+            <a type="button" class="btn btn-outline-success btn-sm" asp-area="Admin" asp-controller="Brand" asp-action="AddBrand">افزودن</a>
         </div>
     </div>
     <div class="card-body">
@@ -99,121 +99,45 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>
-                        <strong><a href="#">اپل</a></strong><br />
-                    </td>
-                    <td class="align-middle">apple</td>
-                    <td class="align-middle">فعال</td>
-                    <td class="align-middle">
-                        <span>میلاد نعمت پور</span><br />
-                        <span class="text-muted">تاریخ :1399/01/07 , 16:05</span>
-                    </td>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th scope="row">@item.Id</th>
+                        <td>
+                            <strong><a href="#">@item.Title</a></strong><br />
+                        </td>
+                        <td class="align-middle">@item.Slug</td>
+                        <td class="align-middle">@item.State</td>
+                        <td class="align-middle">
+                            <span>@item.Creator</span><br />
+                            <span class="text-muted">تاریخ :@item.CreateDate </span>
+                        </td>
 
-                    <td class="align-middle">
-                        <span>میلاد نعمت پور</span><br />
-                        <span class="text-muted">تاریخ :1399/01/07 , 16:05</span>
-                    </td>
+                        <td class="align-middle">
+                            @if (string.IsNullOrEmpty(item.LastModifyDate))
+                            {
+                                <span>---</span>
+                            }
+                            else
+                            {
+                                <span>@item.LastModifier</span><br />
+                                <span class="text-muted">تاریخ :@item.LastModifyDate</span>
+                            }
+                        </td>
 
-                    <td class="align-middle">
-                        <div class="dropdown">
-                            <button class="btn dropdown-toggle" type="button" id="ddAction" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                            <div class="dropdown-menu  dropdown-menu-right text-right" aria-labelledby="ddAction">
-                                <a class="dropdown-item" href="#">جزئیات</a>
-                                <a class="dropdown-item" href="#">ویرایش</a>
-                                <a class="dropdown-item text-danger" href="#">حذف</a>
+                        <td class="align-middle">
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle" type="button" id="ddAction" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                <div class="dropdown-menu  dropdown-menu-right text-right" aria-labelledby="ddAction">
+                                    <a class="dropdown-item" asp-area="admin" asp-controller="brand" asp-action="Index" asp-route-id="@item.Id">جزئیات</a>
+                                    <a class="dropdown-item" asp-area="admin" asp-controller="brand" asp-action="Edit" asp-route-id="@item.Id">ویرایش</a>
+                                    <a class="dropdown-item text-danger" asp-area="admin" asp-controller="brand" asp-action="Delete" asp-route-id="@item.Id">حذف</a>
+                                </div>
                             </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>
-                        <strong><a href="#">سامسونگ</a></strong><br />
-                    </td>
-                    <td class="align-middle">samsung</td>
-                    <td class="align-middle">فعال</td>
-                    <td class="align-middle">
-                        <span>میلاد نعمت پور</span><br />
-                        <span class="text-muted">تاریخ :1399/01/07 , 16:05</span>
-                    </td>
-
-                    <td class="align-middle">
-                        <span>میلاد نعمت پور</span><br />
-                        <span class="text-muted">تاریخ :1399/01/07 , 16:05</span>
-                    </td>
-
-                    <td class="align-middle">
-                        <div class="dropdown">
-                            <button class="btn dropdown-toggle" type="button" id="ddAction" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                            <div class="dropdown-menu  dropdown-menu-right text-right" aria-labelledby="ddAction">
-                                <a class="dropdown-item" href="#">جزئیات</a>
-                                <a class="dropdown-item" href="#">ویرایش</a>
-                                <a class="dropdown-item text-danger" href="#">حذف</a>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>
-                        <strong><a href="#">سونی</a></strong><br />
-
-                    </td>
-                    <td class="align-middle">Sony</td>
-                    <td class="align-middle">فعال</td>
-                    <td class="align-middle">
-                        <span>میلاد نعمت پور</span><br />
-                        <span class="text-muted">تاریخ :1399/01/07 , 16:05</span>
-                    </td>
-
-                    <td class="align-middle">
-                        <span>میلاد نعمت پور</span><br />
-                        <span class="text-muted">تاریخ :1399/01/07 , 16:05</span>
-                    </td>
-
-                    <td class="align-middle">
-                        <div class="dropdown">
-                            <button class="btn dropdown-toggle" type="button" id="ddAction" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                            <div class="dropdown-menu  dropdown-menu-right text-right" aria-labelledby="ddAction">
-                                <a class="dropdown-item" href="#">جزئیات</a>
-                                <a class="dropdown-item" href="#">ویرایش</a>
-                                <a class="dropdown-item text-danger" href="#">حذف</a>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>
-                        <strong><a href="#"> ایسوز</a></strong><br />
-
-                    </td>
-                    <td class="align-middle">Asus</td>
-                    <td class="align-middle">فعال</td>
-                    <td class="align-middle">
-                        <span>میلاد نعمت پور</span><br />
-                        <span class="text-muted">تاریخ :1399/01/07 , 16:08</span>
-                    </td>
-
-                    <td class="align-middle">
-                        <span>--</span>
-                    </td>
-
-                    <td class="align-middle">
-                        <div class="dropdown">
-                            <button class="btn dropdown-toggle" type="button" id="ddAction" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                            <div class="dropdown-menu dropdown-menu-right text-right" aria-labelledby="ddAction">
-                                <a class="dropdown-item" href="#">جزئیات</a>
-                                <a class="dropdown-item" href="#">ویرایش</a>
-                                <a class="dropdown-item text-danger" href="#">حذف</a>
-                            </div>
-                        </div>
-                    </td>
-                </tr>
+                        </td>
+                    </tr>
+                }
             </tbody>
-
         </table>
         <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-center">

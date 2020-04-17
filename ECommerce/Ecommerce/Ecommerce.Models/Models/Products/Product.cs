@@ -18,9 +18,11 @@ namespace ECommerce.Models.Model.Products
         public string SecondaryTile { get; set; }
 
         public string Description { get; set; }
-        public Brand Brand { get; set; }
+        public int BrandId { get; set; }
+        public virtual  Brand Brand { get; set; }
 
-        public Group Group { get; set; }
+        public int GroupId { get; set; }
+        public virtual Group Group { get; set; }
 
         public State State { get; set; }
 

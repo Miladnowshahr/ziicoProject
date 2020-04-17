@@ -153,7 +153,6 @@ E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Presentation.Web\o
 E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Presentation.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Product\List.cshtml.g.cs
 E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Presentation.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\shared\_AdminLayout.cshtml.g.cs
 E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Presentation.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\_ViewImports.cshtml.g.cs
-E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Presentation.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs
 E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Presentation.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Index.cshtml.g.cs
 E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Presentation.Web\obj\Debug\netcoreapp3.1\Razor\Views\shared\_CUILayout.cshtml.g.cs
 E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Presentation.Web\obj\Debug\netcoreapp3.1\ECommerce.Presentation.Web.RazorTargetAssemblyInfo.cache
@@ -168,3 +167,19 @@ E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Presentation.Web\o
 E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Presentation.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Group\AddGroup.cshtml.g.cs
 E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Presentation.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Group\List.cshtml.g.cs
 E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Presentation.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Group\Index.cshtml.g.cs
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Presentation.Web\bin\Debug\netcoreapp3.1\ECommerce.Infra.Web.dll
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Presentation.Web\bin\Debug\netcoreapp3.1\ECommerce.Infra.Web.pdb
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Presentation.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\_ViewStart.cshtml.g.cs
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Presentation.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Keypoint\Add.cshtml.g.cs
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Presentation.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Keypoint\List.cshtml.g.cs
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Presentation.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Product\AddItem.cshtml.g.cs
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Presentation.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Product\Items.cshtml.g.cs
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Presentation.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Product\Specification.cshtml.g.cs
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Presentation.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Specification\Add.cshtml.g.cs
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Presentation.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Specification\AddGroup.cshtml.g.cs
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Presentation.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Specification\GroupList.cshtml.g.cs
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Presentation.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Specification\SGList.cshtml.g.cs
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Presentation.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Tag\Add.cshtml.g.cs
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Presentation.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Tag\AddValue.cshtml.g.cs
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Presentation.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Tag\List.cshtml.g.cs
+E:\Project\ASPCore\ziicoProject\ECommerce\Ecommerce\ECommerce.Presentation.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Tag\Values.cshtml.g.cs

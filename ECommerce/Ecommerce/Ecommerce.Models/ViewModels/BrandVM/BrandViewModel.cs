@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ECommerce.Models.Model.Products.States;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -19,7 +20,7 @@ namespace ECommerce.Models.ViewModels.BrandVM
 
         public string LastModifyDate { get; set; }
 
-        public State State { get; set; }
+        public string State { get; set; }
 
     }
 }

@@ -1,0 +1,181 @@
+﻿@{
+    var groupId = ViewBag.Id;
+    var productId = ViewBag.ProductId;
+    ViewData["Title"] = "لیست اقلام کالا";
+}
+
+
+@section Breadcrumb
+{
+    <nav aria-label="breadcrumb" class="mt-3">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">صفحه اصلی</a></li>
+            <li class="breadcrumb-item"><a href="#">لیست کالا</a></li>
+            <li class="breadcrumb-item">لیست اقلام کالا</li>
+        </ol>
+    </nav>
+}
+
+<div class="card text-right">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <h1 class="h5">لیست اقلام کالای سامسونگ /h1>
+        <div class="action">
+            <button type="button" class="btn btn-outline-primary btn-sm" data-toggle="collapse"
+                    data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                فیلتر
+            </button>
+            <a type="button" class="btn btn-outline-success btn-sm" asp-area="Admin" asp-controller="Specificatoin" asp-action="Add">افزودن</a>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="row justify-content-around">
+            <div class="col-md-6">
+                <div class="collapse" id="collapseExample">
+                    <div class="card mb-3">
+                        <div class="card-header">فیلتر</div>
+                        <div class="card-body">
+                            <form action="/" method="post">
+                                <input type="hidden" value="@ViewBag.GroupId" name="groupId" />
+
+                                <div class="form-group row">
+                                    <label for="ddTag_1" class="col-md-3">رنگ</label>
+                                    <div class="col-md-6">
+                                        <select class="form-control" name="tagValues" id="ddTag_1">
+                                            <option>انتخاب کنید</option>
+                                            <option value="1">سبز</option>
+                                            <option value="2">قرمز</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="ddTag_2" class="col-md-3">گارانتی</label>
+                                    <div class="col-md-6">
+                                        <select class="form-control" name="tagValues" id="ddTag_2">
+                                            <option>انتخاب کنید</option>
+                                            <option value="1">سام سرویس</option>
+                                            <option value="2">مایکروتل</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <label for="ddStatus" class="col-md-3">وضعیت</label>
+                                    <div class="col-md-6">
+                                        <select class="form-control" name="state" id="ddStatus">
+                                            <option>انتخاب کنید</option>
+                                            <option value="1">فعال</option>
+                                            <option value="2">غیرفعال</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <button type="submit" class="btn btn-primary">اعمال فیلتر</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <table class="table table-striped">
+            <thead class="thead-dark">
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col" class="w-25">برجسب ها </th>
+                    <th scope="col" class="w-25">قیمت </th>
+                    <th scope="col" class="w-25">تخفیف </th>
+                    <th scope="col" class="w-25">تعداد </th>
+
+                    <th scope="col" style="width: 10%">وضعیت</th>
+                    <th scope="col" style="width: 20%">ایجاد کننده</th>
+                    <th scope="col" style="width: 20%">آخرین تغییرات</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                <tr>
+                    <th scope="row">@item.Id</th>
+                    <td>
+                        <span class="text-muted">شناسه :</span>1 <br />
+                        <span class="text-muted">رنگ :</span>ارکید   <br />
+                        <span class="text-muted">گارانتی :</span>سام سرویس <br />
+
+                    </td>
+                    <td class="align-middle">100,111,222</td>
+                    <td class="align-middle">10%</td>
+                    <td class="align-middle">5</td>
+                    <td class="align-middle">فعال</td>
+
+
+                    <td class="align-middle">
+                        <span>@item.Creator</span><br />
+                        <span class="text-muted">تاریخ :@item.CreateDate</span>
+                    </td>
+
+                    <td class="align-middle">
+                        @if (string.IsNullOrEmpty(item.LastModifyDate))
+                        {
+                            <span>---</span>
+                        }
+                        else
+                        {
+                            <span>@item.LastModifier</span><br />
+                            <span class="text-muted">تاریخ : @item.LastModifyDate</span>
+                        }
+                    </td>
+
+                    <td class="align-middle">
+                        <div class="dropdown">
+                            <button class="btn dropdown-toggle" type="button" id="ddAction" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                            <div class="dropdown-menu  dropdown-menu-right text-right" aria-labelledby="ddAction">
+                                <a class="dropdown-item" asp-area="admin" asp-controller="Product" asp-action="EditItem" asp-route-id="@item.Id">ویرایش</a>
+                                <a class="dropdown-item text-danger" asp-area="admin" asp-controller="Product" asp-action="DeleteItem" asp-route-id="@item.Id">حذف</a>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+
+                }
+
+
+            </tbody>
+
+        </table>
+        <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                <li class="page-item">
+                    <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</div>

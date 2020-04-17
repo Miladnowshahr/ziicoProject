@@ -17,7 +17,7 @@ namespace ECommerce.Models.Services.Repository.EF.ProductRepo
 
         Task<Product> GetProductAsync(int id);
 
-        Task<IEnumerable<Product>> GetProductsAsync();
+        Task<IEnumerable<Product>> GetProductsAsync(int? id, string primTitle, string secTitle);
 
         Task SaveAsync();
     }

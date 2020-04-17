@@ -8,6 +8,8 @@
     <Folder Include="Areas\Admin\Models\" />
     <Folder Include="Models\" />
     <Folder Include="wwwroot\Images\Brands\" />
+    <Folder Include="wwwroot\Images\Groups\" />
+    <Folder Include="wwwroot\Images\Products\" />
   </ItemGroup>
 
   <ItemGroup>
@@ -17,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\ECommerce.DataAccess\ECommerce.DataAccess.csproj" />
+    <ProjectReference Include="..\ECommerce.Infra.Web\ECommerce.Infra.Web.csproj" />
     <ProjectReference Include="..\ECommerce.IoC\ECommerce.Infra.IoC.csproj" />
   </ItemGroup>
 

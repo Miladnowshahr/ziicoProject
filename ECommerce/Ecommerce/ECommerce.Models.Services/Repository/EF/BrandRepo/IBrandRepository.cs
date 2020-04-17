@@ -11,7 +11,7 @@ namespace ECommerce.Models.Services.Repository.EF.BrandRepo
     public interface IBrandRepository
     {
         Task AddAsync(Brand brand);
-        void Update(Brand brand);
+        Task Update(Brand brand);
         Task DeleteAsync(Brand brand);
         Task<IEnumerable<Brand>> GetBrandsAsync(string title,int? id,State? state);
         Task<Brand> GetBrandAsync(int id);

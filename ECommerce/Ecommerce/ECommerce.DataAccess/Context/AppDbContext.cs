@@ -20,8 +20,10 @@ namespace ECommerce.DataAccess.Context
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
         }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
+            optionsBuilder.EnableSensitiveDataLogging(true);
             optionsBuilder.UseSqlServer("Data Source=DESKTOP-RNVP9U0;database=DigiShopDB;Integrated Security=True;MultipleActiveResultSets=True");
         }
 

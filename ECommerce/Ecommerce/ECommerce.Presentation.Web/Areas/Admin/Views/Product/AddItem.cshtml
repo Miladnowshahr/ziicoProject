@@ -1,0 +1,106 @@
+﻿
+
+
+@{
+    var Id = ViewBag.Id;
+    var productId = ViewBag.ProductId;
+    string title = (Id != null ? "ویرایش" : "افزودن") + "قلم کالا";
+    ViewData["Title"] = title;
+
+}
+@section Breadcrumb
+{
+    <nav aria-label="breadcrumb" class="mt-3">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="#">صفحه اصلی</a></li>
+            <li class="breadcrumb-item"><a href="#">لیست مقادیر برچسب  خاص</a></li>
+            <li class="breadcrumb-item">@ViewData["Title"]</li>
+        </ol>
+    </nav>
+}
+<div class="card text-right">
+    <div class="card-header d-flex justify-content-between align-items-center">
+        <h1 class="h5">@Model?.Title</h1>
+        <div class="action">
+            <a asp-area="Admin" asp-controller="Product" asp-action="items" asp-route-productId="" class="btn btn-outline-primary btn-sm">لیست @title</a>
+        </div>
+    </div>
+    <div class="card-body">
+        <form class="was-validated" asp-area="Admin" asp-controller="Product" asp-action="Save" method="post" name="frmProduct">
+            @{
+                if (Id != null)
+                {
+                    <input type="hidden" name="id" @*value="@Id"*@ />
+                }
+            }
+            <div class="form-group row">
+                <label for="txtPrice" class="col-md-2">قیمت</label>
+                <div class="col-md-5">
+                    <input type="number" class="form-control" id="txtPrice" name="price" required maxlength="150" @*value="@(Model?.Title)"*@>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="txtDiscount" class="col-md-2">تخفیف</label>
+                <div class="col-md-5">
+                    <input type="number" class="form-control" id="txtDiscount" name="discount" required maxlength="150" @*value="@(Model?.Title)"*@>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="txtQuantity" class="col-md-2">تعداد</label>
+                <div class="col-md-5">
+                    <input type="number" class="form-control" id="txtQuantity" name="quantity" required maxlength="150" @*value="@(Model?.Title)"*@>
+                </div>
+            </div>
+
+
+            <div class="form-group row">
+                <label for="ddTag_1" class="col-md-2">رنگ :</label>
+                <div class="col-md-5">
+                    <select class="custom-select" id="ddTag_1" name="tagValues" required @*value="@(Model?.State)"*@>
+                        <option value="">انتخاب کنید</option>
+                        <option selected="@(Model?.State=="Enable")" value="1">red</option>
+                        <option selected="@(Model?.State=="Disable")" value="2">green</option>
+                    </select>
+                    <div class="invalid-feedback">رنگ را مشخص کنید را انتخاب کنید</div>
+
+                </div>
+            </div>
+            <div class="form-group row">
+                <label for="ddTag_2" class="col-md-2">گارانتی :</label>
+                <div class="col-md-5">
+                    <select class="custom-select" id="ddTag_2" name="tagValues" required @*value="@(Model?.State)"*@>
+                        <option value="">انتخاب کنید</option>
+                        <option selected="@(Model?.State=="Enable")" value="1">sam service</option>
+                        <option selected="@(Model?.State=="Disable")" value="2">micro</option>
+                    </select>
+                    <div class="invalid-feedback">وضعیت را انتخاب کنید</div>
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <label for="ddStatus" class="col-md-2">وضعیت</label>
+                <div class="col-md-5">
+                    <select class="custom-select" id="ddStatus" name="state" required @*value="@(Model?.State)"*@>
+                        <option value="">انتخاب کنید</option>
+                        <option selected="@(Model?.State=="Enable")" value="1">فعال</option>
+                        <option selected="@(Model?.State=="Disable")" value="2">غیرفعال</option>
+                    </select>
+                    <div class="invalid-feedback">وضعیت را انتخاب کنید</div>
+
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-md-2"></div>
+                <div class="col-md-5">
+                    <button type="submit" class="btn btn-primary">ذخیره</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts{
+
+}

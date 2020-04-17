@@ -26,6 +26,7 @@
         "dependencies": {
           "ECommerce.DataAccess": "1.0.0",
           "ECommerce.Infra.IoC": "1.0.0",
+          "ECommerce.Infra.Web": "1.0.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "3.1.1",
           "bootstrap": "4.4.1",
           "Microsoft.AspNetCore.Antiforgery": "3.1.0.0",
@@ -2444,6 +2445,14 @@
         },
         "compile": {
           "ECommerce.Infra.IoC.dll": {}
+        }
+      },
+      "ECommerce.Infra.Web/1.0.0": {
+        "runtime": {
+          "ECommerce.Infra.Web.dll": {}
+        },
+        "compile": {
+          "ECommerce.Infra.Web.dll": {}
         }
       },
       "ECommerce.Models/1.0.0": {
@@ -5367,6 +5376,11 @@
       "sha512": ""
     },
     "ECommerce.Infra.IoC/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ECommerce.Infra.Web/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

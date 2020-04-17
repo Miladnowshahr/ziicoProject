@@ -2991,6 +2991,16 @@
           "Microsoft.AspNetCore.App"
         ]
       },
+      "ECommerce.Infra.Web/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/ECommerce.Infra.Web.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/ECommerce.Infra.Web.dll": {}
+        }
+      },
       "ECommerce.Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
@@ -9488,6 +9498,11 @@
       "path": "../ECommerce.IoC/ECommerce.Infra.IoC.csproj",
       "msbuildProject": "../ECommerce.IoC/ECommerce.Infra.IoC.csproj"
     },
+    "ECommerce.Infra.Web/1.0.0": {
+      "type": "project",
+      "path": "../ECommerce.Infra.Web/ECommerce.Infra.Web.csproj",
+      "msbuildProject": "../ECommerce.Infra.Web/ECommerce.Infra.Web.csproj"
+    },
     "ECommerce.Models/1.0.0": {
       "type": "project",
       "path": "../ECommerce.Models/ECommerce.Models.csproj",
@@ -9503,6 +9518,7 @@
     ".NETCoreApp,Version=v3.1": [
       "ECommerce.DataAccess >= 1.0.0",
       "ECommerce.Infra.IoC >= 1.0.0",
+      "ECommerce.Infra.Web >= 1.0.0",
       "Microsoft.VisualStudio.Web.CodeGeneration.Design >= 3.1.1",
       "bootstrap >= 4.4.1"
     ]
@@ -9542,6 +9558,9 @@
           "projectReferences": {
             "E:\\Project\\ASPCore\\ziicoProject\\ECommerce\\Ecommerce\\ECommerce.DataAccess\\ECommerce.DataAccess.csproj": {
               "projectPath": "E:\\Project\\ASPCore\\ziicoProject\\ECommerce\\Ecommerce\\ECommerce.DataAccess\\ECommerce.DataAccess.csproj"
+            },
+            "E:\\Project\\ASPCore\\ziicoProject\\ECommerce\\Ecommerce\\ECommerce.Infra.Web\\ECommerce.Infra.Web.csproj": {
+              "projectPath": "E:\\Project\\ASPCore\\ziicoProject\\ECommerce\\Ecommerce\\ECommerce.Infra.Web\\ECommerce.Infra.Web.csproj"
             },
             "E:\\Project\\ASPCore\\ziicoProject\\ECommerce\\Ecommerce\\ECommerce.IoC\\ECommerce.Infra.IoC.csproj": {
               "projectPath": "E:\\Project\\ASPCore\\ziicoProject\\ECommerce\\Ecommerce\\ECommerce.IoC\\ECommerce.Infra.IoC.csproj"
