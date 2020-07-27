@@ -1,9 +1,13 @@
-﻿
+﻿@model List<ECommerce.Models.ViewModels.KeyPointVM.KeyPointViewViewModel>
 @using ECommerce.Models.Model.KeyPoints
 @{
-    var type = (KeyPointType)ViewBag.Type;
-    var title = "لیست نقاط" + (type == KeyPointType.Positive ? "مثبت" : "منفی");
+
+    var type = (KeyPointType)ViewBag.Keypoint;
+    var title = " لیست نقاط " + (type == KeyPointType.Positive ? "مثبت" : "منفی");
     ViewData["Title"] = title;
+    int counter = 0;
+    var productId = ViewBag.ProductId;
+
 }
 
 @section Breadcrumb
@@ -22,7 +26,7 @@
         <h1 class="h5">لیست @title</h1>
         <div class="action">
            
-            <a type="button" class="btn btn-outline-success btn-sm" asp-area="Admin" asp-controller="KeyPoint" asp-action="Add">افزودن</a>
+            <a type="button" class="btn btn-outline-success btn-sm" asp-area="Admin" asp-controller="KeyPoint" asp-action="Add" asp-route-productId="@productId" asp-route-type="@type">افزودن</a>
         </div>
     </div>
     <div class="card-body">
@@ -39,34 +43,45 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>
-                        <strong>نقطه مثبت 1</strong><br />
-                        <span class="text-muted">شناسه :1 </span>
-                    </td>
-                    <td class="align-middle">فعال</td>
-                    <td class="align-middle">
-                        <span>میلاد نعمت پور</span><br />
-                        <span class="text-muted">تاریخ :1399/01/07 , 16:05</span>
-                    </td>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th scope="row">@(counter+=1)</th>
+                        <td>
+                            <strong>@item.Title</strong><br />
+                            <span class="text-muted">شناسه :@item.Id </span>
+                        </td>
+                        <td class="align-middle">@item.State</td>
+                        <td class="align-middle">
+                            <span>@item.Creator</span><br />
+                            <span class="text-muted">تاریخ :@item.CreatorDateTime</span>
+                        </td>
 
-                    <td class="align-middle">
-                        <span>میلاد نعمت پور</span><br />
-                        <span class="text-muted">تاریخ :1399/01/07 , 16:05</span>
-                    </td>
+                        <td class="align-middle">
+                            @if (string.IsNullOrWhiteSpace(item.LastModifier))
+                            {
+                                <span>--</span>
+                            }
+                            else
+                            {
+                                <span>@item.LastModifier</span><br />
+                                <span class="text-muted">تاریخ : @item.LastModifierDateTime</span>
+                            }
+                        </td>
 
-                    <td class="align-middle">
-                        <div class="dropdown">
-                            <button class="btn dropdown-toggle" type="button" id="ddAction" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                            <div class="dropdown-menu  dropdown-menu-right text-right" aria-labelledby="ddAction">
-                                <a class="dropdown-item" asp-area="admin" asp-controller="keypoint" asp-action="Add" asp-route-id="" >ویرایش</a>
-                                <a class="dropdown-item text-danger" href="#">حذف</a>
+                        <td class="align-middle">
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle" type="button" id="ddAction" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                <div class="dropdown-menu  dropdown-menu-right text-right" aria-labelledby="ddAction">
+                                    <a class="dropdown-item" asp-area="admin" asp-controller="keypoint" asp-action="Edit" asp-route-id="@item.Id">ویرایش</a>
+                                    <a class="dropdown-item text-danger" asp-area="admin" asp-controller="keyPoint" asp-action="Delete" asp-route-id="@item.Id" asp-route-productId="@item.ProductId"  asp-route-type="@item.KeyPoint" >حذف</a>
+                                </div>
                             </div>
-                        </div>
-                    </td>
-                </tr>
-            
+                        </td>
+                    </tr>
+                }
+
+
             </tbody>
 
         </table>

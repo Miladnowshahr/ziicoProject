@@ -1,0 +1,67 @@
+﻿
+@{
+    Layout = "~/Views/shared/_CUILayout.cshtml";
+
+}
+@section Styles{
+    <link href="~/css/Cart/Cart.css" rel="stylesheet" />
+}
+<div id="cart" class="panel wide-wrap">
+    <h1 class="panel__title">
+        سبد خرید    
+    </h1>
+    <div class="panel__content">
+        <div class="cart__table">
+            <div class="cart-table__head">
+                <div class="cart-table__td card-table__td--row"></div>
+                <div class="cart-table__td card-table__td--product">کالا</div>
+                <div class="cart-table__td card-table__td--count">تعداد</div>
+                <div class="cart-table__td card-table__td--price">قیمت</div>
+                <div class="cart-table__td card-table__td--total">مجموع</div>
+                <div class="cart-table__td card-table__td--action"></div>
+            </div>
+            <div class="cart-table__row">
+                <div class="cart-table__td card-table__td--row">1</div>
+                <div class="cart-table__td card-table__td--product">
+                    <div class="cart-product">
+                        <a href="" class="cart-product__photo-link"><img class="cart-product__photo" src="~/Images/resource/products/115218381.jpg" /></a>
+                        <div class="cart-product__titles">
+                            <a class="cart-product__primary-title">سامسونگ گلکسی اس 8</a> <br />
+                            <a class="cart-product__secondary-title"> samsung galaxy s8</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-table__td card-table__td--count">1</div>
+                <div class="cart-table__td card-table__td--price">2,000,000 تومان</div>
+                <div class="cart-table__td card-table__td--total">2,000,000 تومان</div>
+                <div class="cart-table__td card-table__td--action"><a asp-controller="cart" asp-action="remove" asp-route-id=""><span class="button btn-danger">حذف</span></a></div>
+            </div>
+            <div class="cart-table__row">
+                <div class="cart-table__td card-table__td--row">2</div>
+                <div class="cart-table__td card-table__td--product">
+                    <div class="cart-product">
+                        <a href="" class="cart-product__photo-link"><img class="cart-product__photo" src="~/Images/resource/products/119377434.jpg" /></a>
+                        <div class="cart-product__titles">
+                            <a class="cart-product__primary-title">سامسونگ گلکسی اس 8</a><br />
+                            <a class="cart-product__secondary-title"> samsung galaxy s8</a>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="cart-table__td card-table__td--count">1</div>
+                <div class="cart-table__td card-table__td--price">2,000,000 تومان</div>
+                <div class="cart-table__td card-table__td--total">2,000,000 تومان</div>
+                <div class="cart-table__td card-table__td--action"><a asp-controller="cart" asp-action="remove" asp-route-id=""><span class="button btn-danger">حذف</span></a> </div>
+            </div>
+        </div>
+        <div class="cart__footer">
+
+            <a asp-controller="order" asp-action="index"  class="button"> <span class="button-text">تکمیل سبد خرید</span></a>
+            <div class="cart__totalPrice">
+                45,000 تومان
+            </div>
+        </div>
+    </div>
+</div>
+
+

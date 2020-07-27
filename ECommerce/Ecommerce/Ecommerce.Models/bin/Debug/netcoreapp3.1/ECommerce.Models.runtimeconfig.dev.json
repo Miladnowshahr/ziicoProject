@@ -2,9 +2,7 @@
   "runtimeOptions": {
     "additionalProbingPaths": [
       "C:\\Users\\Milad\\.dotnet\\store\\|arch|\\|tfm|",
-      "C:\\Users\\Milad\\.nuget\\packages",
-      "C:\\Microsoft\\Xamarin\\NuGet",
-      "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+      "C:\\Users\\Milad\\.nuget\\packages"
     ]
   }
 }

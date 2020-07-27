@@ -28,7 +28,9 @@ namespace ECommerce.Presentation.Web
             services.AddDbContext<AppDbContext>();
 
             RegisterServices(services);
-            services.AddMvc();
+            services.AddMvc().AddRazorRuntimeCompilation();
+
+
         }
 
         private void RegisterServices(IServiceCollection services)

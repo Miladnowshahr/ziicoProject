@@ -2,7 +2,9 @@
 using ECommerce.Models.Model.Users;
 using ECommerce.Models.Services.Repository.EF.BrandRepo;
 using ECommerce.Models.Services.Repository.EF.GroupRepo;
+using ECommerce.Models.Services.Repository.EF.KeypointRepo;
 using ECommerce.Models.Services.Repository.EF.ProductRepo;
+using ECommerce.Models.Services.Repository.EF.TagRepo;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
 using System;
@@ -36,7 +38,9 @@ namespace ECommerce.Infra.IoC
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IBrandRepository, BrandRepository>();
             services.AddScoped<IGroupRepository, GroupRepository>();
-            
+            services.AddScoped<IKeyPointRepository, KeyPointRepository>();
+            services.AddScoped<ITagRepository, TagRepository>();
+            services.AddScoped<ITagValueRepository, TagValueRepository>();
         }
     }
 }

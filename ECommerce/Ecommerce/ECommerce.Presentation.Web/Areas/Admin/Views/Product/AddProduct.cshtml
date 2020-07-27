@@ -1,4 +1,4 @@
-﻿@model ECommerce.Models.ViewModels.ProductVM.BrandGroupViewModel
+﻿@model ECommerce.Models.ViewModels.ProductVM.EditProductShowViewModel
 
 @{
     var Id = (int?)ViewBag.Id;
@@ -18,7 +18,7 @@
     <div class="card-header d-flex justify-content-between align-items-center">
         <h1 class="h5">@(Id != null ? "ویرایش":"افزودن") کالا</h1>
         <div class="action">
-            <a asp-area="Admin" asp-controller="Product" asp-action="List" class="btn btn-info-outline btn-sm">لیست کالاها</a>
+            <a asp-area="Admin" asp-controller="Product" asp-action="List" class="btn btn-outline-info btn-sm">لیست کالاها</a>
         </div>
     </div>
     <div class="card-body">
@@ -32,14 +32,14 @@
             <div class="form-group row">
                 <label for="txtPrimName" class="col-md-2">نام اصلی</label>
                 <div class="col-md-5">
-                    <input class="form-control" id="txtPrimName" name="primTitle" required maxlength="50">
+                    <input class="form-control" id="txtPrimName" name="primTitle" required maxlength="50" value="@Model.Product?.PrimaryTitle">
                     <div class="valid-feedback">درج نام اصلی الزامی است.</div>
                 </div>
             </div>
             <div class="form-group row">
                 <label for="txtSecName" class="col-md-2">نام محصول به زبان انکلیسی</label>
                 <div class="col-md-5">
-                    <input class="form-control" id="txtSec" required name="secTitle" />
+                    <input class="form-control" id="txtSec" required name="secTitle" value="@Model.Product?.SecondaryTile" />
                     <div class="valid-feedback">درج نام انگلیسی الزامی است.</div>
                 </div>
 
@@ -48,7 +48,7 @@
             <div class="form-group row">
                 <label for="txtDesc" class="col-md-2">توضیحات</label>
                 <div class="col-md-5">
-                    <textarea id="txtDesc" class="form-control" required cols="100" name="description" rows="5" name="tx"></textarea>
+                    <textarea id="txtDesc" class="form-control" required cols="100" name="description" rows="5" name="desc">@Model.Product?.Description</textarea>
                     <div class="valid-feedback">درج توضیحات الزامی است.</div>
                 </div>
             </div>
@@ -56,9 +56,8 @@
             <div class="form-group row">
                 <label for="ddBrand" class="col-md-2">برند</label>
                 <div class="col-md-5">
-                    <select class="custom-select" asp-items="Model.Brand"   id="ddBrand" name="Brand" required>
+                    <select class="custom-select" asp-items="Model.BrandGroupViewModel.Brand"    id="ddBrand" name="Brand" required>
                         <option value="">انتخاب کنید</option>
-       
                     </select>
                     <div class="invalid-feedback">برند را انتخاب کنید</div>
 
@@ -67,7 +66,7 @@
             <div class="form-group row">
                 <label for="ddGroup" class="col-md-2">گروه</label>
                 <div class="col-md-5">
-                    <select class="custom-select" asp-items="Model.Group" id="ddGroup" name="Group" required>
+                    <select class="custom-select" asp-items="Model.BrandGroupViewModel.Group" id="ddGroup" name="Group" required>
                         <option value="">انتخاب کنید</option>
                     
                     </select>
@@ -80,8 +79,8 @@
                 <div class="col-md-5">
                     <select class="custom-select" id="ddStatus" name="state" required>
                         <option>انتخاب کنید</option>
-                        <option value="1">فعال</option>
-                        <option value="2">غیرفعال</option>
+                        <option value="1" selected="@(Model.Product?.State.ToString()=="Enable")"  >فعال</option>
+                        <option value="2" selected="@(Model.Product?.State.ToString()=="Disable")">غیرفعال</option>
                     </select>
                     <div class="invalid-feedback">وضعیت را انتخاب کنید</div>
 

@@ -1,0 +1,170 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/shared/_CUILayout.cshtml";
+
+}
+@section Styles{
+    <link href="~/css/Product/Index.css" rel="stylesheet" />
+}
+
+<div class="product wide-wrap" id="product">
+    <section class="product__header">
+        <div class="product__gallery">
+            <div class="product-gallery">
+                <div class="product-gallery__photo-wrap">
+                    <img src="~/Images/resource/products/115218381.jpg" class="product-gallery__photo" alt="" />
+                </div>
+            </div>
+        </div>
+
+        <div class="product__detail">
+            <section class="product__title">
+                <h1 class="product__primary-title">سامسونگ گلکسی اس 8</h1>
+                <h2 class="porduct__secondary-title">Samsung Galaxy s8</h2>
+                <ul class="product-info">
+                    <li class="product-info__item">گروه : <span class="product-info__value">گوشی موبایل</span></li>
+                    <li class="product-info__item">برند : <span class="product-info__value">سامسونگ</span></li>
+                </ul>
+            </section>
+            <form class="product-detail" action="" method="post">
+                @*<p class="product-detail__empty">کالا مورد نظر موجود نمی باشد</p>*@
+                <span class="product-detail__title">کالای مورد نظر خود را انتخاب نمایید :</span>
+                <ul class="product-detail__items">
+                    <li class="product-detail__item">
+                        <label class="product-detail__label">
+                            <input class="product-detail__input" type="radio" name="productItemId" value="1" checked />
+                            <span class="product-label__text">رنگ : سفید - گارانتی : الماس</span>
+                            <span class="product-detail__price">20,000 تومان</span>
+                        </label>
+                    </li>
+                    <li class="product-detail__item">
+                        <label class="product-detail__label">
+                            <input class="product-detail__input" type="radio" name="productItemId" value="1" />
+                            <span class="product-label__text">رنگ : مشکی - گارانتی : الماس</span>
+                            <span class="product-detail__price">21,000 تومان</span>
+                        </label>
+                    </li>
+                </ul>
+                <div class="product-detail-actions">
+                    <div class="product-detail-actions__count">
+                        <span class="product-detail-actions__text">تعداد : </span>
+                        <select class="product-detail-actions__select" name="count" >
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                        </select>
+                    </div>
+                </div>
+                <label class="product-detail-actions__button pink button mdi mdi-cart-plus" title="افزودن به سبد خرید"><span class="button-text">افزودن به سبد خرید</span> <input class="product-detail-actions__input" type="submit"/></label>
+            </form>
+        </div>
+    </section>
+    <section class="product__summary">
+        <div class="product-description">
+            <span class="product-description__icon mdi mdi-information-outline mdi-48px"></span>
+            <p class="product-description__text">
+                متن توضیح کالا که برای توضیحات بیشتر در رابطه کالا در این قسمت نمایش داده می شود. این متن ساختگی می باشد و ارزشی ندارد. قابل توجه دیگران  متن توضیح کالا که برای توضیحات بیشتر در رابطه +کالا در این قسمت نمایش داده می شود. این متن ساختگی می باشد و ارزشی ندارد. قابل توجه دیگران
+            </p>
+        </div>
+        <div class="product-keypoint">
+            <div class="product-keypoint__col">
+                <h3 class="product-keypoint__title">نقاط مثبت</h3>
+                <ul class="product-keypoint__list">
+                    <li class="product-keypoint__item">انعطاف پذیری بالا</li>
+                    <li class="product-keypoint__item">کیفیت تصویر</li>
+                    <li class="product-keypoint__item">پردازنده پرسرعت</li>
+                </ul>
+            </div>
+            <div class="product-keypoint__col">
+                <h3 class="product-keypoint__title">نقاط منفی</h3>
+                <ul class="product-keypoint__list">
+                    <li class="product-keypoint__item">شارژ کم</li>
+                    <li class="product-keypoint__item">دوربین ضعیف</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+    <section class="product-tab">
+        <input class="product-tab__radio" type="radio" id="rdo_tab_1" name="tabRdo" checked />
+        <input class="product-tab__radio" type="radio" id="rdo_tab_2" name="tabRdo"  />
+        <div class="product-tab__header">
+            <label class="product-tab__button" data-tab="1" for="rdo_tab_1">مشخصات فنی</label>
+            <label class="product-tab__button" data-tab="2" for="rdo_tab_2">نظرات کاربران</label>
+        </div>
+
+        <div class="product-tab__content" data-tab="1">
+            <ul class="product-specs">
+                <li class="product-specs__group">
+                    <h1 class="product-specs__title">مشخصات کلی</h1>
+                    <ul class="product-specs__list">
+                        <li class="product-specs__item">
+                            <span class="product-specs__caption">حافظه داخلی </span> <strong class="product-specs__value">6 گیگابایت</strong>
+                        </li>
+                        <li class="product-specs__item">
+                            <span class="product-specs__caption">حافظه جانبی </span> <strong class="product-specs__value">6 گیگابایت</strong>
+                        </li>
+                        <li class="product-specs__item">
+                            <span class="product-specs__caption">دوربین </span> <strong class="product-specs__value">6 گیگابایت</strong>
+                        </li>
+
+                    </ul>
+                </li>
+                <li class="product-specs__group">
+                    <h1 class="product-specs__title">صفحه نمایش</h1>
+                    <ul class="product-specs__list">
+                        <li class="product-specs__item">
+                            <span class="product-specs__caption">سایز صفحه </span> <strong class="product-specs__value">6 گیگابایت</strong>
+                        </li>
+                        <li class="product-specs__item">
+                            <span class="product-specs__caption">نوع </span> <strong class="product-specs__value">6 گیگابایت</strong>
+                        </li>
+                       
+
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="product-tab__content" data-tab="2">
+            <div class="product-comments">
+                <div class="product-comments__actions">
+                    <div class="product-comments-message__wrap">
+                        <p class="product-comments__message">
+                            برای ارسال نظر در سایت ابتدا وارد حساب کاربری خود شوید.
+                        </p>
+                        <a href="#" class="button"><span class="button-text">ورود</span></a>
+                    </div>
+                    <form class="produt-comments__form" method="post" asp-controller="product" asp-action="sendComment">
+                        <input type="hidden" value="1" name="productId" />
+                        <textarea class="product-comments__text" rows="5" cols="100" name="comment"></textarea>
+                        <button type="submit" class="button pink"></button>
+                    </form>
+                </div>
+
+                @*<ul class="product-comments__list">
+                    <li class="product-comments__item">
+                        <div class="product-comments__header">
+                            <span class="product-comments__sender">سیامک حبیبی پور</span>
+                            <span class="product-comments__date">دوشنبه 2020/02/02 </span>
+                        </div>
+                        <p class="product-comments__text">کالای خوبی است و خریدشو به دیگران توصیه میکنم.</p>
+                    </li>
+                    <li class="product-comments__item">
+                        <div class="product-comments__header">
+                            <span class="product-comments__sender">میلاد نعمت پور</span>
+                            <span class="product-comments__date">شنبه 2020/02/02 </span>
+                        </div>
+                        <p class="product-comments__text">کالای خوبی است و خریدشو به دیگران توصیه میکنم.</p>
+                    </li>
+                </ul>*@
+                <p class="product-comments__empty-message">
+
+                </p>
+            </div> 
+        </div>
+    </section>
+</div>
+
+
+

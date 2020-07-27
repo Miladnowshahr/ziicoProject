@@ -156,9 +156,9 @@
                                 <button class="btn dropdown-toggle" type="button" id="ddAction" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
                                 <div class="dropdown-menu  dropdown-menu-right text-right" aria-labelledby="ddAction">
                                     <a class="dropdown-item" asp-area="admin" asp-controller="product" asp-action="Index" asp-route-id="@item.Id">جزئیات</a>
-                                    <a class="dropdown-item" asp-area="admin" asp-controller="product" asp-action="Edit" asp-route-id="@item.Id" >ویرایش</a>
-                                    <a class="dropdown-item" asp-area="admin" asp-controller="keypoint" asp-action="list" asp-route-productId="" asp-route-type="@KeyPointType.Positive">مدیریت نقاط مثبت</a>
-                                    <a class="dropdown-item" asp-area="admin" asp-controller="keypoint" asp-action="list" asp-route-productId="" asp-route-type="@KeyPointType.Negative">مدیریت نقاط منفی</a>
+                                    <a class="dropdown-item" asp-area="admin" asp-controller="product" asp-action="EditProduct" asp-route-id="@item.Id" >ویرایش</a>
+                                    <a class="dropdown-item" asp-area="admin" asp-controller="Keypoint" asp-action="list" asp-route-productId="@item.Id" asp-route-keyPoint="@KeyPointType.Positive">مدیریت نقاط مثبت</a>
+                                    <a class="dropdown-item" asp-area="admin" asp-controller="Keypoint" asp-action="list" asp-route-productId="@item.Id" asp-route-keyPoint="@KeyPointType.Negative">مدیریت نقاط منفی</a>
                                     <a class="dropdown-item" asp-area="admin" asp-controller="product" asp-action="Specification" asp-route-productId="@item.Id">مدیریت مشخصات فنی</a>
                                     <a class="dropdown-item text-danger" href="#">حذف</a>
                                 </div>

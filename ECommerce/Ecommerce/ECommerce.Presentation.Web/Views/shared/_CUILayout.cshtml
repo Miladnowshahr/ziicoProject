@@ -6,15 +6,241 @@
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>@ViewBag.Title</title>
-    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    @*<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />*@
+    <link href="~/css/materialdesignicons.css" rel="stylesheet" />
+    <link href="~/css/Shared/Layout.css" rel="stylesheet" />
     @RenderSection("Styles", false)
 </head>
 <body>
-    <div>CUI Layout</div>
-    <div>
-        @RenderBody()
-    </div>
+    
 
+    <div id="wrapper">
+        <header id="header">
+            <div class="header-container wide-wrap">
+                <div class="header-tbl">
+                    <div class="header-tbl-row">
+
+                        <div class="header-tbl-cell header-logo">
+                            <a href="/" class="header-logo-btn">
+                                <img class="header-logo-img" src="/Images/image/LOGO.png" width="150" height="80">
+                            </a>
+
+                        </div>
+
+                        <div class="header-tbl-cell header-search">
+                            <form class="header-search-box-wrapper"  asp-controller="product" asp-action="list">
+                                <input type="submit" class="header-search-box-submit-btn" id="headerSearchBoxBtn">
+                                <label for="headerSearchBoxBtn" class="header-search-box-label mdi mdi-magnify"></label>
+                                <span class="header-search-box-input-warp">
+                                    <input type="text" placeholder="نام کالا و یا دسته مورد نظر را جستجو کنید" name="keyword" class="header-search-box-input	">
+                                </span>
+                            </form>
+                        </div>
+                        <div class="header-tbl-cell header-actions">
+                            <span class="header-action-items">
+                                <a href="" class="header-action-btn mdi mdi-cart-outline mdi-24px cart">
+                                    <span class="header-action-btn-text">
+                                        سبد خرید<span class="header-action-btn-count">12</span>
+                                    </span>
+                                </a>
+                            </span>
+                            <span class="header-action-items">
+                                <span class="header-action-menu">
+                                    <input class="header-action-menu__checkBox" type="checkbox" id="chk_menu" /> 
+                                    <label for="chk_menu" class="header-action-btn mdi mdi-chevron-down mdi-24px profile">
+                                        <span class="header-action-btn-text">ورود / ثبت نام</span>
+                                    </label>
+                                    <span class="header-action-menu__content">
+                                        <a class="header-action-menu__item">ورود به سایت</a>
+                                        <a class="header-action-menu__item">ورود به سایت</a>
+
+                                    </span>
+
+                                </span>
+                                
+                            </span> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav id="nav">
+                <ul class="nav-bar clearfix wide-wrap">
+                    <li class="nav-item send-left">
+                        <a href="#" class="nav-button">شگفت انگیزها</a>
+                    </li>
+                    <li class="nav-item wide">
+                        <a href="#" class="nav-button">کالای دیجیتال</a>
+                        <div class="nav-subMenu-wrap">
+                            <ul class="nav-subMenu">
+                                <li class="nav-subMenu-item">
+                                    <a class="nav-subMenu-btn">لوازم جانبی گوشی موبایل</a>
+                                </li>
+                                <li class="nav-subMenu-item">
+                                    <a class="nav-subMenu-btn">گوشی موبایل</a>
+                                </li>
+                                <li class="nav-subMenu-item">
+                                    <a class="nav-subMenu-btn">واقعیت مجازی</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item type2">
+                        <a href="#" class="nav-button">وسیله نقلیه،ابزار و اداری</a>
+                        <div class="nav-subMenu-wrap">
+                            <ul class="nav-subMenu">
+                                <li class="nav-subMenu-item">
+                                    <a class="nav-subMenu-btn">لوازم جانبی گوشی موبایل</a>
+                                </li>
+                                <li class="nav-subMenu-item">
+                                    <a class="nav-subMenu-btn">گوشی موبایل</a>
+                                </li>
+                                <li class="nav-subMenu-item">
+                                    <a class="nav-subMenu-btn">واقعیت مجازی</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-button">آرایشی، بهداشتی و سلامت</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-button">مد و پوشاک</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-button">کتاب و لوازم تحریر</a>
+                    </li>
+
+                </ul>
+            </nav>
+        </header>
+
+        <main id="content" class="clearfix">
+            <div id="container">
+                @RenderBody()
+
+            </div>
+        </main>
+
+        <footer id="footer">
+            <div class="footer-detail-wrap">
+                <div class="footer-badge-container">
+                    <div class="wide-wrap">
+                        <ul class="footer-badge-wrap clearfix">
+
+                            <li class="footer-badge-item">
+                                <a class="footer-badge-link">
+                                    <span class="footer-badge-icon mdi mdi-truck-fast-outline mdi-46px"></span>
+                                    <span class="footer-badge-title">سرویس تحویل سریع</span>
+                                </a>
+                            </li>
+                            <li class="footer-badge-item">
+                                <a class="footer-badge-link">
+                                    <span class="footer-badge-icon mdi mdi-face-agent mdi-40px"></span>
+                                    <span class="footer-badge-title">پشتیبانی 24 ساعته</span>
+                                </a>
+                            </li>
+
+                            <li class="footer-badge-item">
+                                <a class="footer-badge-link">
+                                    <span class="footer-badge-icon mdi mdi-credit-card-marker mdi-40px"></span>
+                                    <span class="footer-badge-title">پرداخت در محل</span>
+                                </a>
+                            </li>
+                            <li class="footer-badge-item">
+                                <a class="footer-badge-link">
+                                    <span class="footer-badge-icon mdi mdi-check-decagram mdi-40px"></span>
+                                    <span class="footer-badge-title">اصل بودن کالا	</span>
+                                </a>
+                            </li>
+                            <li class="footer-badge-item">
+                                <a class="footer-badge-link">
+                                    <span class="footer-badge-icon mdi mdi-restore mdi-40px"></span>
+                                    <span class="footer-badge-title">برگشت در صورت نارضایتی	</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="wide-wrap">
+                    <div class="footer-detail-tbl">
+                        <div class="footer-detail-tbl-tr">
+                            <div class="footer-detail-tbl-td">
+                                <h6 class="footer-detail-tbl-title">راهنمای خرید</h6>
+                                <div class="footer-detail-tbl-content">
+                                    <a class="footer-detail-tbl-link">سوالات متداول</a><br>
+                                    <a class="footer-detail-tbl-link">شیوه خرید و ثبت سفارش</a><br>
+                                    <a class="footer-detail-tbl-link">شیوه های پرداخت</a><br>
+                                    <a class="footer-detail-tbl-link">شرایط استفاده از گیل بن</a><br>
+
+                                </div>
+                            </div>
+                            <div class="footer-detail-tbl-td">
+                                <h6 class="footer-detail-tbl-title">خدمات مشتریان</h6>
+                                <div class="footer-detail-tbl-content">
+                                    <a class="footer-detail-tbl-link">پاسخ به پرسش‌های متداول</a><br>
+                                    <a class="footer-detail-tbl-link">رویه‌های بازگرداندن کالا</a><br>
+                                    <a class="footer-detail-tbl-link">شرایط استفاده</a><br>
+
+                                </div>
+
+                            </div>
+                            <div class="footer-detail-tbl-td">
+                                <h6 class="footer-detail-tbl-title">گیل شرق</h6>
+                                <div class="footer-detail-tbl-content">
+                                    <a class="footer-detail-tbl-link">تماس با دیجی‌کالا</a><br>
+                                    <a class="footer-detail-tbl-link">درباره دیجی‌کالا</a><br>
+                                    <a class="footer-detail-tbl-link">فرصت‌های شغلی</a><br>
+
+                                </div>
+
+                            </div>
+                            <div class="footer-detail-tbl-td about">
+                                <h6 class="footer-detail-tbl-title">پشتیبانی آماده پاسخگویی</h6>
+                                <div class="footer-detail-tbl-content">
+                                    <div class="footer-detail-tbl-text-wrap">
+                                        <span class="footer-detail-tbl-text-icon mdi mdi-phone mdi-18px"></span>
+                                        <p class="footer-detail-tbl-text">+130000000</p>
+                                    </div>
+
+                                    <div class="footer-detail-tbl-text-wrap">
+                                        <span class="footer-detail-tbl-text-icon mdi mdi-email mdi-18px"></span>
+                                        <p class="footer-detail-tbl-text email">info@info.com</p>
+                                    </div>
+
+                                    <div class="footer-detail-tbl-text-wrap">
+                                        <span class="footer-detail-tbl-text-icon mdi mdi-map-marker mdi-18px"></span>
+                                        <p class="footer-detail-tbl-text">رشت- میدان امام حسین</p>
+                                    </div>
+
+                                    <div class="footer-detail-tbl-action">
+                                        <a class="button pink">
+                                            <span class="button-text">تماس با ما</span>
+                                        </a>
+
+                                        <a class="button pink">
+                                            <span class="button-text">تماس با ما</span>
+                                        </a>
+                                    </div>
+
+
+
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+    </div>
+        <div class="footer-copy-right-wrap">
+        <div class="wide-wrap">
+            <p class="copy-right-text">استفاده از مطالب فروشگاه اینترنتی  فقط برای مقاصد غیرتجاری و با ذکر منبع بلامانع است. کلیه حقوق این سایت متعلق به شرکت  می‌باشد.</p>
+        </div>
+    </div>
+    </footer>
+    </div>
     <script src="~/lib/jquery/jquery.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
     @RenderSection("Scripts", false)

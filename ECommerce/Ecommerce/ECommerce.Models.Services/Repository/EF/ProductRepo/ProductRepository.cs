@@ -31,7 +31,7 @@ namespace ECommerce.Models.Services.Repository.EF.ProductRepo
 
         public async Task<Product> GetProductAsync(int id)
         {
-            return await _db.Products.FindAsync(id);
+            return await _db.Products.Include(x => x.Creator).Include(x => x.LastModifier).FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public async Task<IEnumerable<Product>> GetProductsAsync(int? id,string primTitle,string secTitle)

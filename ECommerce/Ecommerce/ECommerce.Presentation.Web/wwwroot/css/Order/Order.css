@@ -1,0 +1,116 @@
+﻿.order-summary{
+    border:1px solid orangered;
+    background-color:#eee;
+    padding:1rem;
+    max-width:700px;
+    margin-right:auto;
+    margin-left:auto;
+    display:flex;
+    align-items:center;
+    box-sizing:border-box;
+}
+
+.order-summary__text{
+    flex:1;
+    font-size:1.6rem;
+    color:#333;
+    line-height:1.8;
+    margin-left:2rem;
+}
+.order-form__section{
+    margin-top:2rem;
+
+}
+.order-form__header{
+    font-size:1.6rem;
+    color:#777;
+    border-bottom:1px dashed #ddd;
+    padding:1rem;
+    margin-bottom:1rem;
+    line-height:1.8;
+}
+.order-from__content{
+    padding:2rem 1rem;
+}
+
+.order-form__group{
+    margin-top:2rem;
+    display:flex;
+    align-items:flex-start;
+    padding-right:2rem;
+}
+.order-form__group:first-child{
+    margin-top:0;
+}
+.order-form__label{
+    font-size:1.4rem;
+    color:#555;
+    width:120px;
+    line-height:1.8;
+}
+.order-form__field{
+    flex:1;
+}
+.order-form__input{
+    border:1px solid #d0d0d0;
+    font-size:1.4rem;
+    color:#333;
+    line-height:3rem;
+    padding:.5rem 1rem;
+    box-sizing:border-box;
+    height:3rem;
+    max-width:400px;
+    width:100%;
+}
+
+.order-form__input--multiple{
+    height:15rem;
+    max-width:400px;
+    width:100%;
+}
+.order-form-radio{
+    display:flex;
+    max-width:400px;
+    padding:1rem;
+    border:1px solid #ddd;
+    box-sizing:border-box;
+    align-items:center;
+    width:100%;
+}
+.order-form-radio__input{
+    margin-left:2rem;
+}
+.order-form-radio__content {
+    flex: 1;
+}
+.order-form-radio__title{
+    font-size:1.6rem;
+    line-height:1.8;
+    color:#333;
+    display:block;
+}
+.order-form-radio__text {
+    font-size: 1.6rem;
+    line-height: 1.8;
+    color: #777;
+    display: block;
+}
+.order-form-radio__title--highlight{
+    color:orangered;
+}
+.order-form__validation{
+    display:none;
+    align-items:center;
+    margin-top:.5rem;
+    font-size:1.4rem;
+    color:#ff001f;
+    line-height:1.8;
+
+}
+    .order-form__validation--show{
+        display:flex;
+    }
+    .order-form_validation:before {
+        margin-left: .5rem;
+        line-height: 1;
+    }

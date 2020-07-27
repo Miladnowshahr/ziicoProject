@@ -12,6 +12,8 @@ using ECommerce.Models.Model.Products.Groups;
 using Microsoft.Extensions.Configuration;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.DependencyInjection;
+using ECommerce.Models.Model.KeyPoints;
+using ECommerce.Models.Models.Tags;
 
 namespace ECommerce.DataAccess.Context
 {
@@ -24,7 +26,7 @@ namespace ECommerce.DataAccess.Context
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.EnableSensitiveDataLogging(true);
-            optionsBuilder.UseSqlServer("Data Source=DESKTOP-RNVP9U0;database=DigiShopDB;Integrated Security=True;MultipleActiveResultSets=True");
+            optionsBuilder.UseSqlServer("Data Source=DESKTOP-VFPG7IN\\SQL2019;database=DigiShopDB;Integrated Security=True;MultipleActiveResultSets=True");
         }
 
         public DbSet<Brand> Brands { get; set; }
@@ -32,7 +34,11 @@ namespace ECommerce.DataAccess.Context
 
         public DbSet<Product> Products { get; set; }
 
+        public DbSet<KeyPoint> KeyPoints { get; set; }
 
+        public DbSet<Tag> Tags { get; set; }
+
+        public DbSet<TagValue> TagValues { get; set; }
 
         public static async Task CreateAdminAccount(IServiceProvider serviceProvider,IConfiguration configuration)
         {

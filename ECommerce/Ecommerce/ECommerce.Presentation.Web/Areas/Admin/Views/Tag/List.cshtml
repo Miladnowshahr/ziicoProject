@@ -1,6 +1,7 @@
-﻿
+﻿@model List<ECommerce.Models.ViewModels.TagVM.TagShowViewModel>
 @{
     ViewData["Title"] = "لیست برچسب ها";
+    int counter = 0;
 }
 
 @section Breadcrumb
@@ -15,13 +16,13 @@
 
 <div class="card text-right">
     <div class="card-header d-flex justify-content-between align-items-center">
-        <h1 class="h5">لیست کالاها</h1>
+        <h1 class="h5">لیست برچسب ها</h1>
         <div class="action">
             <button type="button" class="btn btn-outline-primary btn-sm" data-toggle="collapse"
                     data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
                 فیلتر
             </button>
-            <a type="button" class="btn btn-outline-success btn-sm" asp-area="Admin" asp-controller="Tag" asp-action="Save">افزودن</a>
+            <a type="button" class="btn btn-outline-success btn-sm" asp-area="Admin" asp-controller="Tag" asp-action="add">افزودن</a>
         </div>
     </div>
     <div class="card-body">
@@ -36,7 +37,7 @@
                                 <div class="form-group row">
                                     <label for="txtTitle" class="col-md-3">عنوان</label>
                                     <div class="col-md-6">
-                                        <input class="form-control" name="title" id="txtTitle" />
+                                        <input class="form-control" name="title" id="txtTitle"/>
                                     </div>
                                 </div>
                                
@@ -91,36 +92,47 @@
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td>
-                        <strong><a href="#">گارانتی</a></strong><br />
-                        <span class="text-muted">شناسه :1 </span>
-                    </td>
-                
-                    <td class="align-middle">فعال</td>
-                    <td class="align-middle">
-                        <span>میلاد نعمت پور</span><br />
-                        <span class="text-muted">تاریخ :1399/01/07 , 16:05</span>
-                    </td>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <th scope="row">@(counter+=1)</th>
+                        <td>
+                            <strong><a href="#">@item.Title</a></strong><br />
+                            <span class="text-muted">شناسه :@item.Id </span>
+                        </td>
 
-                    <td class="align-middle">
-                        <span>میلاد نعمت پور</span><br />
-                        <span class="text-muted">تاریخ :1399/01/07 , 16:05</span>
-                    </td>
+                        <td class="align-middle">@item.State</td>
+                        <td class="align-middle">
+                            <span>@item.Creator</span><br />
+                            <span class="text-muted">تاریخ :@item.CreateDate</span>
+                        </td>
 
-                    <td class="align-middle">
-                        <div class="dropdown">
-                            <button class="btn dropdown-toggle" type="button" id="ddAction" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
-                            <div class="dropdown-menu  dropdown-menu-right text-right" aria-labelledby="ddAction">
-                                <a class="dropdown-item" href="#">جزئیات</a>
-                                <a class="dropdown-item" href="#">لیست مقادیر</a>
-                                <a class="dropdown-item" href="#">ویرایش</a>
-                                <a class="dropdown-item text-danger" href="#">حذف</a>
+                        <td class="align-middle">
+                            @if (!string.IsNullOrWhiteSpace(item.LastModifier))
+                            {
+                                <span>@item.LastModifier</span><br />
+                                <span class="text-muted">تاریخ : @item.LastModifyDate</span>
+                            }
+                            else
+                            {
+                                <span>---</span>
+                            }
+                        </td>
+
+                        <td class="align-middle">
+                            <div class="dropdown">
+                                <button class="btn dropdown-toggle" type="button" id="ddAction" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                                <div class="dropdown-menu  dropdown-menu-right text-right" aria-labelledby="ddAction">
+                                    <a class="dropdown-item" asp-area="admin" asp-controller="Tag" asp-action="index" asp-route-id="@item.Id">جزئیات</a>
+                                    <a class="dropdown-item"asp-area="admin" asp-controller="Tag" asp-action="TagValues" asp-route-id="@item.Id" >لیست مقادیر</a>
+                                    <a class="dropdown-item" asp-area="admin" asp-controller="Tag" asp-action="Edit" asp-route-id="@item.Id">ویرایش</a>
+                                    <a class="dropdown-item text-danger" asp-area="admin" asp-controller="Tag" asp-action="Delete" asp-route-id="@item.Id">حذف</a>
+                                </div>
                             </div>
-                        </div>
-                    </td>
-                </tr>
+                        </td>
+                    </tr>
+                }
+
 
             </tbody>
 

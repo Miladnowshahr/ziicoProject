@@ -76,21 +76,47 @@ namespace ECommerce.Presentation.Web.Areas.Admin.Controllers
 
         public async Task<IActionResult> AddProduct()
         {
-            var brandGroupViewModel = new BrandGroupViewModel();
+            var addProdcutVM = new EditProductShowViewModel();
 
             var brands = await _brandRepo.GetBrandsAsync(null, null, null);
             var selectBrands = brands.Select(b => new { b.Title, b.Id });
 
-            brandGroupViewModel.Brand = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(selectBrands, "Id", "Title");
 
+            var groups = await _groupRepo.GetGroupsAsync(null, null, null, null);
+            var selectGroups = groups.Select(g => new { g.Title, g.Id });
+            
+            addProdcutVM.BrandGroupViewModel = new BrandGroupViewModel
+            {
+                Brand = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(selectBrands, "Id", "Title"),
+                Group = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(selectGroups, "Id", "Title")
 
-            var groups = await _groupRepo.GetGroupsAsync(null, null,null, null);
-            var selectGroups = groups.Select(g => new { g.Title,g.Id});
+            };
 
-            brandGroupViewModel.Group = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(selectGroups, "Id", "Title");
-            return View(brandGroupViewModel);
+           
+            return View(addProdcutVM);
         }
 
+
+        public async Task<IActionResult> EditProduct(int id)
+        {
+            ViewBag.Id = id;
+            var editProductVM = new EditProductShowViewModel();
+
+            var brands = await _brandRepo.GetBrandsAsync(null, null, null);
+            var selectBrands = brands.Select(b => new { b.Title, b.Id });
+            editProductVM.Product = await _productRepo.GetProductAsync(id);
+            
+
+            var groups = await _groupRepo.GetGroupsAsync(null, null,null, null);
+            var selectGroups = groups.Select(g => new { g.Title, g.Id });
+
+            editProductVM.BrandGroupViewModel = new BrandGroupViewModel
+            {
+                Brand = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(brands, "Id", "Title", editProductVM.Product.BrandId),
+                Group = new Microsoft.AspNetCore.Mvc.Rendering.SelectList(groups, "Id", "Title", editProductVM.Product.GroupId)
+            };
+            return View("AddProduct",editProductVM);
+        }
 
         public async Task<IActionResult> Save(int? id,string primTitle, string secTitle, string description, int brand, int group,State state, IFormFile photo)
         {
@@ -129,6 +155,18 @@ namespace ECommerce.Presentation.Web.Areas.Admin.Controllers
             //edit
             else
             {
+                var model = await _productRepo.GetProductAsync(id.Value);
+                model.BrandId = brand;
+                model.Description = description;
+                model.GroupId = group;
+                model.LastModifier = Operator;
+                model.LastModifyDate = DateTime.UtcNow;
+                model.PrimaryTitle = primTitle;
+                model.SecondaryTile = secTitle;
+                model.State = state;
+
+                 _productRepo.Update(model);
+                await _productRepo.SaveAsync();
 
                 return RedirectToAction("list");
             }
