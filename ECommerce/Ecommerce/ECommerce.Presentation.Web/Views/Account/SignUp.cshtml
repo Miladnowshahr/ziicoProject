@@ -1,0 +1,65 @@
+﻿
+
+@{
+    ViewData["Title"] = "ثبت نام";
+    Layout = null;
+
+}
+<!Doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>@ViewBag.Title</title>
+    @*<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />*@
+    <link href="~/css/materialdesignicons.css" rel="stylesheet" />
+    <link href="~/css/Shared/Layout.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="wrapper2">
+        <div class="user-panel">
+            <header class="user-panel__header">ثبت نام</header>
+            <main class="user-panel__content">
+                <form class="frm-control" method="post">
+                    <div class="frm-control__group">
+                        <label class="frm-control__label" for="txtEmail">ایمیل</label>
+                        <input class="frm-control__input" type="email" name="Email" id="txtEmial" />
+                        <span class="frm-control__validation frm-control__validation--show mdi mdi-alert-circle-outline">    ایمیل الزامی می باشد </span>
+
+                    </div>
+                    <div class="frm-control__group">
+                        <label class="frm-control__label" for="txtPassword">رمز عبور</label>
+                        <input class="frm-control__input" type="password" name="password" id="txtPassword" />
+                        <span class="frm-control__validation frm-control__validation--show mdi mdi-alert-circle-outline">    رمز عبور الزامی می باشد </span>
+
+                    </div>
+                    <div class="frm-control__group">
+                        <label class="frm-control__label" for="txtConfirmPassword">رمز عبور </label>
+                        <input class="frm-control__input" type="password" name="confirmPassword" id="txtConfirmPassword" />
+                        <span class="frm-control__validation frm-control__validation--show mdi mdi-alert-circle-outline">   تکرار رمز عبور الزامی می باشد </span>
+
+                    </div>
+                    <div class="frm-control__group">
+                        <label class="frm-control__label" for="txtname">نام</label>
+                        <input class="frm-control__input" type="text" name="name" id="txtname" />
+                        <span class="frm-control__validation frm-control__validation--show mdi mdi-alert-circle-outline">    نام الزامی می باشد </span>
+                    </div>
+
+                    <div class="frm-control__group">
+                        <label class="frm-control__label" for="txtLastName">نام خانوادگی</label>
+                        <input class="frm-control__input" type="text" name="lastName" id="txtLastName" />
+                        <span class="frm-control__validation frm-control__validation--show mdi mdi-alert-circle-outline"> نام خانوادگی الزامی می باشد </span>
+                    </div>
+                    <div class="frm-control__action">
+                        <button class="button pink" type="submit"><span class="button-text">ثبت نام</span></button>
+                        <a class="button second"><span class="button-text">برگشت</span></a>
+
+                    </div>
+                </form>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>

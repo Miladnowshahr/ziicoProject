@@ -1,0 +1,55 @@
+﻿
+
+@{ 
+    ViewData["Title"] = "ورود به سایت";
+    Layout = null;
+
+}
+<!Doctype html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8>
+    <meta name="viewport" content="width=device-width" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>@ViewBag.Title</title>
+    @*<link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />*@
+    <link href="~/css/materialdesignicons.css" rel="stylesheet" />
+    <link href="~/css/Shared/Layout.css" rel="stylesheet" />
+</head>   
+<body>
+    <div class="wrapper2">
+        <div class="user-panel"> 
+            <header class="user-panel__header">ورود به سایت</header>
+            <main class="user-panel__content">
+                <form class="frm-control" method="post">
+                    <div class="frm-control__group">
+                        <label class="frm-control__label" for="txtEmail">ایمیل</label>
+                        <input class="frm-control__input" type="email" name="Email" id="txtEmial" />
+                        <span class="frm-control__validation frm-control__validation--show mdi mdi-alert-circle-outline">   درج ایمیل الزامی می باشد </span>
+
+                    </div>
+                    <div class="frm-control__group">
+                        <label class="frm-control__label" for="txtPassword">رمز عبور</label>
+                        <input class="frm-control__input" type="password" name="password" id="txtPassword" />
+                        <span class="frm-control__validation frm-control__validation--show mdi mdi-alert-circle-outline">   درج رمز عبور الزامی می باشد </span>
+
+                    </div>
+                    <div class="frm-control__group">
+                        <label class="frm-control-checkbox" for="chkbox">
+                            <input type="checkbox" class="frm-control-checkbox__input" id="chkbox" value="true" />مرا به یادآر
+                        </label>
+                    </div>
+
+                    <div class="frm-control__action">
+                        <button class="button pink" type="submit"><span class="button-text">ورود</span></button>
+                        <a class="button second"><span class="button-text">برگشت</span></a>
+
+                    </div>
+                </form>
+            </main>
+        </div>
+    </div>
+</body>
+
+</html>
+ 
