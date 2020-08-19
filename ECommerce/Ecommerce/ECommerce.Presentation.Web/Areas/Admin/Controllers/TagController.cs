@@ -21,11 +21,13 @@ namespace ECommerce.Presentation.Web.Areas.Admin.Controllers
     {
         private UserManager<Operator> _userManager;
         private ITagRepository _tagRepo;
+        private ITagValueRepository _tagValuRepo;
 
-        public TagController(UserManager<Operator> userManager, ITagRepository tagRepo):base(userManager)
+        public TagController(UserManager<Operator> userManager, ITagRepository tagRepo, ITagValueRepository tagValuRepo) : base(userManager)
         {
             _tagRepo = tagRepo;
             _userManager = userManager;
+            _tagValuRepo = tagValuRepo;
         }
 
         public async Task<IActionResult> List(int? id,string title,State? state)
@@ -65,7 +67,7 @@ namespace ECommerce.Presentation.Web.Areas.Admin.Controllers
             TagEditViewModel tagEditModel = new TagEditViewModel()
             {
                 Id=model.Id,
-                Title=model.Title,
+                Title = model.Title,
                 State=model.State
             };
             return View("Add",tagEditModel);
@@ -117,10 +119,36 @@ namespace ECommerce.Presentation.Web.Areas.Admin.Controllers
         /// لیست مقادیر یک بر چسب
         /// </summary>
         /// <returns></returns>
-        public IActionResult Values(int id,string title,State? state)
+        public async Task<IActionResult> Values(int id,string title,State? state)
         {
             ViewBag.Id = id;
-            return View();
+            var tagValueList = new List<TagValueViewModel>();
+
+            var tagValue =  await _tagValuRepo.GetTagValuesAsync(null, null, id);
+            if (tagValue!=null)
+            {
+                PersianCalendar pc = new PersianCalendar();
+                foreach (var item in tagValue)
+                {
+                    tagValueList.Add(new TagValueViewModel
+                    {
+                        Id=item.Id,
+                        CreateDate=pc.PersianDate(item.CreateDate),
+                        Creator=item.Creator.FirstName +" "+item.Creator.LastName,
+                        LastModifyDate=item.LastModifyDate!=null?pc.PersianDate((DateTime)item.LastModifyDate),
+                        LastModifier=item.LastModifier?.FirstName+ " " + item.LastModifier?.LastName,
+                        Title=item.Title,
+                        State=item.State,
+                        Tag=new TagShowViewModel
+                        {
+                            Id=item.Tag.Id,
+                           Title=item.Tag.Title,
+                        }
+                        
+                    });
+                }
+            }
+            return View(tagValueList);
         }
 
         /// <summary>
@@ -128,9 +156,10 @@ namespace ECommerce.Presentation.Web.Areas.Admin.Controllers
         /// </summary>
         /// <param name="tagId"></param>
         /// <returns></returns>
-        public IActionResult AddValue(int tagId)
+        public async Task<IActionResult> AddValue(int tagId)
         {
             ViewBag.TagId = tagId;
+            ViewBag.Tag =await _tagRepo.GetTagAsync(tagId);
             return View();
         }
         
@@ -140,16 +169,47 @@ namespace ECommerce.Presentation.Web.Areas.Admin.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        public IActionResult EditValue(int id )
+        public async Task<IActionResult> EditValue(int id )
         {
             ViewBag.Id = id;
-            return View("AddValue");
+            var tagValue = await _tagValuRepo.GetTagValueAsync(id);
+            ViewBag.TagId = tagValue?.Tag?.Id;
+            return View("AddValue",tagValue);
         }
 
         [HttpPost]
-        public IActionResult SaveValue(int? id,int? tagId, string title, State state)
+        public async Task<IActionResult> SaveValue(int? id,int? tagId, string title, State state)
         {
-            return RedirectToAction("values");
+            if (id==null)
+            {
+                var tag = await _tagRepo.GetTagAsync((int)tagId);
+                await _tagValuRepo.AddAsync(new TagValue
+                {
+                    CreateDate = DateTime.Now,
+                    Creator = Operator,
+                    State = state,
+                    Title = title,
+                    Tag = tag,
+                });
+                await _tagValuRepo.SaveAsync();
+            }
+            else //edit 
+            {
+                 _tagValuRepo.Update(new TagValue
+                {
+                    Id=(int)id,
+                    LastModifier=Operator,
+                    LastModifyDate=DateTime.Now,
+                    Title=title,
+                    State=state,
+                });
+                await _tagValuRepo.SaveAsync();
+                
+            }
+
+
+
+            return RedirectToAction("values",tagId);
         }
 
         public IActionResult DeleteValue(int id)

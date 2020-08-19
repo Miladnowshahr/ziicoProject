@@ -13,7 +13,7 @@ namespace ECommerce.Models.Services.Repository.EF.TagRepo
         Task SaveAsync();
         Task<TagValue> GetTagValueAsync(int id);
 
-        Task<IEnumerable<TagValue>> GetTagValuesAsync(int? id, string title);
+        Task<IEnumerable<TagValue>> GetTagValuesAsync(int? id, string title,int tagId);
 
         void Update(TagValue tagvalue);
 

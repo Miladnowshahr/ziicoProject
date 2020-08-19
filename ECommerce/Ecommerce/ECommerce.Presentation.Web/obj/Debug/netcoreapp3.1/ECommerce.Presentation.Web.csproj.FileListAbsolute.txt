@@ -1374,3 +1374,5 @@ C:\Users\Milad\source\repos\Zicco\ziicoProject\ECommerce\Ecommerce\ECommerce.Pre
 C:\Users\Milad\source\repos\Zicco\ziicoProject\ECommerce\Ecommerce\ECommerce.Presentation.Web\obj\Debug\netcoreapp3.1\ECommerce.Presentation.Web.genruntimeconfig.cache
 C:\Users\Milad\source\repos\Zicco\ziicoProject\ECommerce\Ecommerce\ECommerce.Presentation.Web\obj\Debug\netcoreapp3.1\Razor\Views\Order\Detail.cshtml.g.cs
 C:\Users\Milad\source\repos\Zicco\ziicoProject\ECommerce\Ecommerce\ECommerce.Presentation.Web\obj\Debug\netcoreapp3.1\Razor\Views\Account\SignIn.cshtml.g.cs
+C:\Users\Milad\source\repos\Zicco\ziicoProject\ECommerce\Ecommerce\ECommerce.Presentation.Web\obj\Debug\netcoreapp3.1\Razor\Areas\Admin\Views\Account\SignIn.cshtml.g.cs
+C:\Users\Milad\source\repos\Zicco\ziicoProject\ECommerce\Ecommerce\ECommerce.Presentation.Web\obj\Debug\netcoreapp3.1\Razor\Views\Account\SignUp.cshtml.g.cs

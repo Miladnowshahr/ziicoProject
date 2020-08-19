@@ -1,0 +1,77 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html style="height:100%">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset="utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/Admin/Shared/Layout.css" rel="stylesheet" />
+</head>
+<body dir="rtl" style="height:100%">
+
+    <div class="container-fluid d-flex justify-content-center flex-column h-100">
+        <div class="card text-right mr-auto ml-auto" style="width:680px;max-width:100%">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <h1 class="h5">ورود به پنل مدیریتی</h1>
+
+            </div>
+            <div class="card-body">
+                <form class="was-validated" asp-area="Admin" asp-controller="Account" asp-action="SignIn" method="post" name="frmAccount">
+
+                    <div class="form-group row">
+                        <label for="txtUserName" class="col-md-2">نام کاربری</label>
+                        <div class="col-md-8">
+                            <input class="form-control" id="txtUserName" name="UserName" required maxlength="50" >
+                            <div class="valid-feedback"> نام کاربری الزامی است.</div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="txtPassword" class="col-md-2">رمز ورود</label>
+                        <div class="col-md-8">
+                            <input class="form-control" type="password" id="txtPassword" required name="password" />
+                            <div class="valid-feedback"> رمز ورود الزامی است.</div>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label class="col-md-2"></label>
+                        <div class="col-md-4">
+                            <style type="text/css">
+                                .custom-control{
+                                    padding-right:1.5rem;
+                                    padding-left:0;
+                                }
+                                .custom-control-label:before{
+                                    left:auto;
+                                    right:-1.5rem;
+                                }
+                                .custom-control-input{
+                                    position:relative;
+                                    z-index:1;
+                                }
+                            </style>
+                            <div class="custom-control custom-checkbox">
+                                <input class="custom-control-input" type="checkbox" id="chkRemeberMe" name="rememberMe" value="true" />
+                                <label class="custom-control-label" for="chkRemeberMe"> مرا به خاطر بسپار</label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-2"></div>
+                        <div class="col-md-5">
+                            <button type="submit" class="btn btn-primary">ورود</button>
+
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+</body>
+</html>

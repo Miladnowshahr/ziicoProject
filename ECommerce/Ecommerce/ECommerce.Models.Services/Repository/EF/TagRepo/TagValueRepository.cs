@@ -28,9 +28,9 @@ namespace ECommerce.Models.Services.Repository.EF.TagRepo
             return await _db.TagValues.Include(x => x.Creator).Include(x => x.LastModifier).FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public async Task<IEnumerable<TagValue>> GetTagValuesAsync(int? id, string title)
+        public async Task<IEnumerable<TagValue>> GetTagValuesAsync(int? id, string title,int tagId)
         {
-            return await _db.TagValues.Include(x => x.Creator)
+            return await _db.TagValues.Where(w=>w.Tag.Id==tagId).Include(x => x.Creator)
                 .Include(x => x.LastModifier).Where(x => (x.Id == id || id.HasValue) && (x.Title.Contains(title)) || string.IsNullOrEmpty(title)).ToListAsync();
         }
 
